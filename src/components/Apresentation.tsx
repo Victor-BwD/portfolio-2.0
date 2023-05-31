@@ -1,5 +1,10 @@
 import { Box, Text, Heading, Flex, HStack, extendTheme, ChakraProvider, Icon, Button, Link } from '@chakra-ui/react'
 import { GithubIcon, LinkedinIcon, Hand } from 'lucide-react'
+import { useContext } from 'react';
+import { LanguageContext } from '../context/LanguageContext';
+import { Link as ScrollLink } from 'react-scroll';
+
+
 
 const theme = extendTheme({
   breakpoints: {
@@ -11,11 +16,8 @@ const theme = extendTheme({
   },
 });
 
-type Idioma = {
-  idioma: string;
-}
-
-export function Apresentation({idioma}: Idioma) {
+export function Apresentation() {
+  const { idioma } = useContext(LanguageContext);
   return (
     <ChakraProvider theme={theme}>
       <Flex height="100vh" alignItems="center" justifyContent="center" ml="2" p="2">
@@ -68,8 +70,24 @@ export function Apresentation({idioma}: Idioma) {
             </Text>
             <Box display="flex" justifyContent="center" alignItems="center" mr={{base: 0, sm: 0, md: "9%"}}>
               <HStack gap="4">
-                <Button as={Link}>{idioma === "pt" ? "Projetos" : "Projects"}</Button>
-                <Button>{idioma === "pt" ? "Sobre" : "About"}</Button>
+                <ScrollLink 
+                  to="projects"  
+                  smooth={true}          
+                  duration={500} 
+                >
+                  <Button as={Link} href="#projects">
+                    {idioma === "pt" ? "Projetos" : "Projects"}
+                  </Button>
+                </ScrollLink>
+                <ScrollLink 
+                  to="About"  
+                  smooth={true}          
+                  duration={500} 
+                >
+                  <Button>
+                    {idioma === "pt" ? "Sobre" : "About"}
+                  </Button>
+                </ScrollLink>
               </HStack>
             </Box>
           </Box>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Box,
   Grid,
@@ -9,6 +9,7 @@ import {
   extendTheme,
   HStack,
 } from '@chakra-ui/react';
+import { LanguageContext } from '../context/LanguageContext';
 
 const theme = extendTheme({
   breakpoints: {
@@ -45,9 +46,11 @@ const projects = [
 ];
 
 export function Projects() {
+  const { idioma } = useContext(LanguageContext);
+
   return (
     <ChakraProvider theme={theme}>
-      <Box p={4}>
+      <Box p={4} id="projects">
         <Grid
           templateColumns={{ sm: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={4}
@@ -73,7 +76,7 @@ export function Projects() {
                   fontSize={{ base: 'sm', md: 'md' }}
                   minW="140px"
                 >
-                  Ver Source
+                  {idioma === "pt" ? "Ver Projeto" : "View"}
                 </Button>
                 <Button
                   as={Link}
@@ -82,7 +85,7 @@ export function Projects() {
                   fontSize={{ base: 'sm', md: 'md' }}
                   minW="140px"
                 >
-                  Ver Repositório
+                  {idioma === "pt" ? "Ver Repositório" : "Repository"}
                 </Button>
               </HStack>
             </Box>
