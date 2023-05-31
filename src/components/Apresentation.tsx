@@ -68,23 +68,23 @@ export function Apresentation() {
               {idioma === "pt" ? "27 anos, com 3 anos de experiência em tecnologia. Tenho experiência tanto em desenvolvimento de jogos quanto front-end e back-end." 
               : "27 years old, with 3 years of experience in technology. I have experience in both game development and front-end and back-end development."}
             </Text>
-            <Box display="flex" justifyContent="center" alignItems="center" mr={{base: 0, sm: 0, md: "9%"}}>
+            <Box display="flex" justifyContent="center" alignItems="center" mr={{base: 0, sm: 0, md: "7%"}}>
               <HStack gap="4">
                 <ScrollLink 
                   to="projects"  
                   smooth={true}          
-                  duration={500} 
+                  duration={400} 
                 >
-                  <Button as={Link} href="#projects">
+                  <Button size="lg">
                     {idioma === "pt" ? "Projetos" : "Projects"}
                   </Button>
                 </ScrollLink>
                 <ScrollLink 
                   to="About"  
                   smooth={true}          
-                  duration={500} 
+                  duration={400} 
                 >
-                  <Button>
+                  <Button size="lg">
                     {idioma === "pt" ? "Sobre" : "About"}
                   </Button>
                 </ScrollLink>
