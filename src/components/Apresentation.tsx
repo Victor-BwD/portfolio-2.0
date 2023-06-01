@@ -1,4 +1,4 @@
-import { Box, Text, Heading, Flex, HStack, extendTheme, ChakraProvider, Icon, Button, Link } from '@chakra-ui/react'
+import { Box, Text, Heading, Flex, HStack, extendTheme, ChakraProvider, Icon, Button } from '@chakra-ui/react'
 import { GithubIcon, LinkedinIcon, Hand } from 'lucide-react'
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
