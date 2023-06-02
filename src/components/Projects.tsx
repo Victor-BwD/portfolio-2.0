@@ -8,6 +8,8 @@ import {
   ChakraProvider,
   extendTheme,
   HStack,
+  Text,
+  Flex
 } from '@chakra-ui/react';
 import { LanguageContext } from '../context/LanguageContext';
 
@@ -50,7 +52,11 @@ export function Projects() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box p={4} id="projects">
+      <Flex alignItems="center" justifyContent="center" flexDirection="column" id="projects">
+        <Text as="b" fontSize="4xl" color="white" mb="2">Meus projetos</Text>
+        <Text as="b" fontSize="2xl" color="white" mb="2">Alguns dos meus projetos que fiz no meu tempo livre</Text>
+      </Flex>
+      <Box p={4} >
         <Grid
           templateColumns={{ sm: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={4}
