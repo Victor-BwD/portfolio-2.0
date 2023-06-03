@@ -13,6 +13,8 @@ import {
 } from '@chakra-ui/react';
 import { LanguageContext } from '../context/LanguageContext';
 
+
+
 const theme = extendTheme({
   breakpoints: {
     sm: '30em', // 480px
@@ -26,25 +28,27 @@ const projects = [
   {
     id: 1,
     name: 'Projeto 1',
-    image: 'https://sciencenotes.org/wp-content/uploads/2021/03/Examples-of-Liquids.png',
-    source: 'https://example.com/source1',
-    repository: 'https://example.com/repository1',
+    image: 'https://i.imgur.com/gyxa19Q.png',
+    description: 'A game made in Unity for studying animations, code and lighting.',
+    source: 'https://victor-bwd.itch.io/the-castle',
+    repository: 'https://github.com/Victor-BwD/Game-2D-Metroidvania',
   },
   {
     id: 2,
     name: 'Projeto 2',
-    image: 'https://sciencenotes.org/wp-content/uploads/2021/03/Examples-of-Liquids.png',
-    source: 'https://example.com/source2',
-    repository: 'https://example.com/repository2',
+    image: 'https://i.imgur.com/68UnNQb.png',
+    description: 'A copy of the windows calculator made in React.',
+    source: 'https://calculator-react-js-ten.vercel.app',
+    repository: 'https://github.com/Victor-BwD/Calculator-ReactJS',
   },
   {
     id: 3,
     name: 'Projeto 2',
     image: 'https://sciencenotes.org/wp-content/uploads/2021/03/Examples-of-Liquids.png',
+    description: 'A project',
     source: 'https://example.com/source2',
     repository: 'https://example.com/repository2',
   },
-  // Adicione mais projetos aqui...
 ];
 
 export function Projects() {
@@ -53,10 +57,14 @@ export function Projects() {
   return (
     <ChakraProvider theme={theme}>
       <Flex alignItems="center" justifyContent="center" flexDirection="column" id="projects">
-        <Text as="b" fontSize="4xl" color="white" mb="2">Meus projetos</Text>
-        <Text as="b" fontSize="2xl" color="white" mb="2">Alguns dos meus projetos que fiz no meu tempo livre</Text>
+        <Text as="b" fontSize="4xl" color="white" mb="2">
+          {idioma === "pt" ? "Meus projetos" : "My Projects"}
+        </Text>
+        <Text as="b" fontSize="2xl" color="white" mb="2" p={{base: "12px", md: "0"}}>
+          {idioma === "pt" ? "Alguns dos meus projetos que fiz no meu tempo livre" : "Some of the projects I did in my free time."}
+        </Text>
       </Flex>
-      <Box p={4} >
+      <Box p={4}>
         <Grid
           templateColumns={{ sm: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={4}
@@ -69,7 +77,8 @@ export function Projects() {
               borderRadius="md"
               backgroundColor="white"
             >
-              <Image src={project.image} alt={project.name} mb={4} objectFit="cover" />
+              <Image src={project.image} alt={project.name} mb={4} objectFit="cover" height={{base: "", md: "80%"}} width={{base: "", md: "100%"}}/>
+              <Text mb="4">{project.description}</Text>
               <HStack
                 spacing={{ base: '15px', md: '20px' }}
                 justifyContent="center"
