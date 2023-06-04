@@ -92,6 +92,7 @@ export function Projects() {
                   colorScheme="blue"
                   fontSize={{ base: 'sm', md: 'md' }}
                   minW="140px"
+                  isExternal
                 >
                   {idioma === "pt" ? "Ver Projeto" : "View"}
                 </Button>
@@ -101,6 +102,7 @@ export function Projects() {
                   colorScheme="blue"
                   fontSize={{ base: 'sm', md: 'md' }}
                   minW="140px"
+                  isExternal
                 >
                   {idioma === "pt" ? "Ver Repositório" : "Repository"}
                 </Button>
