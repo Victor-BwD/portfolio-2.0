@@ -12,6 +12,7 @@ import {
   Flex
 } from '@chakra-ui/react';
 import { LanguageContext } from '../context/LanguageContext';
+import ComingSoonPhoto from '../assets/comingsoon.jpg'
 
 
 
@@ -29,7 +30,7 @@ const projects = [
     id: 1,
     name: 'Projeto 1',
     image: 'https://i.imgur.com/gyxa19Q.png',
-    description: 'A game made in Unity for studying animations, code and lighting.',
+    description: 'A game made in Unity for studying animation, code and lighting in Unity.',
     source: 'https://victor-bwd.itch.io/the-castle',
     repository: 'https://github.com/Victor-BwD/Game-2D-Metroidvania',
   },
@@ -44,8 +45,8 @@ const projects = [
   {
     id: 3,
     name: 'Projeto 2',
-    image: 'https://sciencenotes.org/wp-content/uploads/2021/03/Examples-of-Liquids.png',
-    description: 'A project',
+    image: ComingSoonPhoto,
+    description: 'Project in development.',
     source: 'https://example.com/source2',
     repository: 'https://example.com/repository2',
   },
@@ -73,6 +74,7 @@ export function Projects() {
             <Box
               key={project.id}
               p={4}
+              pb={{base: "20px", md: "32px", lg: "42px"}}
               borderWidth="1px"
               borderRadius="md"
               backgroundColor="white"

@@ -1,6 +1,7 @@
 import { Box, Grid, HStack, Link, Stack, Text } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { LanguageContext } from "../context/LanguageContext";
+import base from "@emotion/styled/types/base";
 
 const technologies = [
   { id: 1, name: "ReactJS" },
