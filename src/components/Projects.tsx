@@ -30,7 +30,7 @@ const projects = [
     id: 1,
     name: 'Projeto 1',
     image: 'https://i.imgur.com/gyxa19Q.png',
-    description: 'A game made in Unity for studying animation, code and lighting in Unity.',
+    description: 'A game made in Unity for studying animation, code and lighting.',
     source: 'https://victor-bwd.itch.io/the-castle',
     repository: 'https://github.com/Victor-BwD/Game-2D-Metroidvania',
   },
