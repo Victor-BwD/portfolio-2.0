@@ -60,8 +60,8 @@ export function About() {
             {idioma === "pt" ? "Encontre-me online:" : "Find me online:"}
           </Text>
           <HStack spacing={2}>
-            <Link color="white" href="https://github.com/Victor-BwD">Github</Link>
-            <Link color="white" href="https://www.linkedin.com/in/victorbwd/">Linkedin</Link>
+            <Link color="white" href="https://github.com/Victor-BwD" isExternal>Github</Link>
+            <Link color="white" href="https://www.linkedin.com/in/victorbwd/" isExternal>Linkedin</Link>
             <Text as="button" display="inline-block" onClick={handleShowEmail} color="white">
               {idioma === "pt" ? "Clique para ver o e-mail:" : "Click to see email:"}
             </Text>
