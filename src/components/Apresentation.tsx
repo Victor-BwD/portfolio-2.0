@@ -1,5 +1,5 @@
 import { Box, Text, Heading, Flex, HStack, extendTheme, ChakraProvider, Icon } from '@chakra-ui/react'
-import { GithubIcon, LinkedinIcon } from 'lucide-react'
+import { GithubIcon, InstagramIcon, LinkedinIcon } from 'lucide-react'
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 
@@ -20,8 +20,8 @@ export function Apresentation() {
       <Flex height="95vh" alignItems="center" justifyContent="center" ml="8" p="2" mr="8">
         <Box>
           <Box>
-            <Text fontSize={{ base: "xl", md: "3xl" }} ml={{ base: "1", md: "2" }} color="white">
-              {idioma === "pt" ? "Oi, meu nome é Victor" : "Hello, my name is Victor"}
+            <Text fontSize={{ base: "xl", md: "3xl" }} ml={{ base: "1", md: "2" }} color="white" as="b">
+              {idioma === "pt" ? "Olá, meu nome é Victor" : "Hello, my name is Victor"}
             </Text>
             <HStack spacing={{base: "4", md: "6"}} alignItems="center" height="106px">
               <Heading as="h1" fontSize={{ base: "5xl", sm: "6x1", md: "7xl", lg: "9xl" }} color="white">
@@ -30,12 +30,17 @@ export function Apresentation() {
               <HStack spacing="4" alignItems="center" pt="7">
                 <Box backgroundColor="white" rounded="10px">
                   <a href='https://github.com/Victor-BwD' target='_blank' rel="noreferrer">
-                    <Icon as={GithubIcon} boxSize={{ base: "42px", md: "68px" }} color="black" />
+                    <Icon as={GithubIcon} boxSize={{ base: "42px", md: "68px" }} color="black" mt="2"/>
                   </a>
                 </Box>
                 <Box backgroundColor="white" rounded="10px">
                   <a href='https://www.linkedin.com/in/victorbwd/' target='_blank' rel="noreferrer">
-                    <Icon as={LinkedinIcon} boxSize={{ base: "42px", md: "68px" }} color="black" />
+                    <Icon as={LinkedinIcon} boxSize={{ base: "42px", md: "68px" }} color="black" mt="2"/>
+                  </a>
+                </Box>
+                <Box backgroundColor="white" rounded="10px">
+                  <a href='https://www.instagram.com/victor_bwd/' target='_blank' rel="noreferrer">
+                    <Icon as={InstagramIcon} boxSize={{ base: "42px", md: "68px" }} color="black" mt="2"/>
                   </a>
                 </Box>
               </HStack>

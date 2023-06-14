@@ -29,7 +29,7 @@ export function About() {
   }
 
   return (
-    <Stack direction={["column", "row"]} spacing={2} height={{base: "990px", md: "960px", lg: "560px"}} alignItems="center" justifyContent="center" mr={{base: "24px", md: "32px", lg: "48px"}} >
+    <Stack direction={["column", "row"]} spacing={2} height={{base: "890px", md: "960px", lg: "560px"}} alignItems="center" justifyContent="center" mr={{base: "24px", md: "32px", lg: "48px"}} >
       <Box width={["90%", "580px"]} mx={["5%", "10%"]} id="About">
         <Text as="b" fontSize={["3xl", "4xl", "5xl"]} color="white">
           {idioma === "pt" ? "Minha carreira até agora" : "My career so far"}
@@ -55,25 +55,19 @@ export function About() {
             "Atualmente, estou trabalhando como freelancer em desenvolvimento web." 
             : "Currently, I am working as a freelance web developer."}
           </Text>
+          <HStack>
           <Text as="b" color="white" fontSize={["md", "lg"]}>
-            {idioma === "pt" ? "Encontre-me online:" : "Find me online:"}
+            {idioma === "pt" ? "Mande-me um e-mail:" : "Send me a e-mail:"}
           </Text>
-          <HStack spacing={2}>
-            <Link color="white" href="https://github.com/Victor-BwD" isExternal>Github</Link>
-            <Link color="white" href="https://www.linkedin.com/in/victorbwd/" isExternal>Linkedin</Link>
-            <Text as="button" display="inline-block" onClick={handleShowEmail} color="white">
-              {idioma === "pt" ? "Clique para ver o e-mail:" : "Click to see email:"}
-            </Text>
+          <Text as="span" color="white" wordBreak="break-word">
+            victor.bogdanowdornelles@gmail.com
+          </Text>
           </HStack>
-          {showEmail && (
-              <Text as="span" color="white" wordBreak="break-word">
-                victor.bogdanowdornelles@gmail.com
-              </Text>
-            )}
+          
         </Stack>
       </Box>
 
-      <Box mt={["2", "4"]} height="410px" width={["90%", "auto"]}>
+      <Box mt={["2", "4"]} height="390px" width={["90%", "auto"]}>
         <Box as="b" fontSize={["2xl", "3xl"]} color="white">
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
         </Box>
