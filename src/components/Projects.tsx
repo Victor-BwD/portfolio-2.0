@@ -30,7 +30,7 @@ const projects = [
     id: 1,
     name: 'Projeto 1',
     image: 'https://i.imgur.com/gyxa19Q.png',
-    description: 'A game made in Unity for studying animation, code and lighting.',
+    description: 'A game made in Unity for studying purpose.',
     source: 'https://victor-bwd.itch.io/the-castle',
     repository: 'https://github.com/Victor-BwD/Game-2D-Metroidvania',
   },
@@ -57,7 +57,7 @@ export function Projects() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Flex alignItems="center" justifyContent="center" flexDirection="column" id="projects">
+      <Flex alignItems="center" justifyContent="center" flexDirection="column" id="projects" pt="4">
         <Text as="b" fontSize="4xl" color="white" mb="2">
           {idioma === "pt" ? "Meus projetos" : "My Projects"}
         </Text>
@@ -65,7 +65,7 @@ export function Projects() {
           {idioma === "pt" ? "Alguns dos meus projetos que fiz no meu tempo livre" : "Some of the projects I did in my free time."}
         </Text>
       </Flex>
-      <Box p={4}>
+      <Box p={{base: "4", md: "12"}}>
         <Grid
           templateColumns={{ sm: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={4}
@@ -74,7 +74,7 @@ export function Projects() {
             <Box
               key={project.id}
               p={4}
-              pb={{base: "20px", md: "32px", lg: "42px"}}
+              pb={{base: "20px", md: "56px", lg: "56px", xl: "10px"}}
               borderWidth="1px"
               borderRadius="md"
               backgroundColor="white"

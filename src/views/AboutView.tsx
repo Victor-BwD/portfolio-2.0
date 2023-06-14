@@ -3,7 +3,7 @@ import { About } from "../components/About";
 
 export function AboutView() {
   return (
-    <Box backgroundColor="#0b5cf9" pt={{base: "20%", md: "14px"}}>
+    <Box backgroundColor="#0B214D" pt={{base: "20%", md: "14px"}}>
         <About />
     </Box>
   )

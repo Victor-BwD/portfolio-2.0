@@ -29,7 +29,7 @@ export function About() {
   }
 
   return (
-    <Stack direction={["column", "row"]} spacing={4} height={{base: "890px", md: "960px", lg: "560px"}} pb="6" alignItems="center" justifyContent="center">
+    <Stack direction={["column", "row"]} spacing={2} height={{base: "990px", md: "960px", lg: "560px"}} alignItems="center" justifyContent="center" mr={{base: "24px", md: "32px", lg: "48px"}} >
       <Box width={["90%", "580px"]} mx={["5%", "10%"]} id="About">
         <Text as="b" fontSize={["3xl", "4xl", "5xl"]} color="white">
           {idioma === "pt" ? "Minha carreira até agora" : "My career so far"}
@@ -42,8 +42,8 @@ export function About() {
           </Text>
           <Text color="white" fontSize={["md", "lg"]}>
             {idioma === "pt" ? 
-            "Com mais de 2 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos." 
-            : "With over 2 years of profissional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
+            "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos." 
+            : "With 3 years of profissional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
           </Text>
           <Text color="white" fontSize={["md", "lg"]}>
             {idioma === "pt" ? 
@@ -78,7 +78,7 @@ export function About() {
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
         </Box>
         <Box mt={2}>
-          <Grid templateColumns={["repeat(auto-fit, minmax(90px, 1fr))", "repeat(auto-fit, minmax(115px, 1fr))"]} gap={[2, 2, 3]} mt={2}>
+          <Grid templateColumns={["repeat(auto-fit, minmax(90px, 1fr))", "repeat(auto-fit, minmax(128px, 1fr))"]} gap={[2, 2, 3]} mt={2}>
             {technologies.map((technology) => (
             <Box
             key={technology.id}

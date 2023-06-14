@@ -3,7 +3,7 @@ import { Projects } from "../components/Projects";
 
 export function ProjectsView() {
   return (
-    <Box backgroundColor="#0b5cf9">
+    <Box backgroundColor="#0B214D">
         <Projects />
     </Box>
   )
