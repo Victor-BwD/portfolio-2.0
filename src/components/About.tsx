@@ -1,5 +1,5 @@
-import { Box, Grid, HStack, Link, Stack, Text } from "@chakra-ui/react";
-import { useContext, useState } from "react";
+import { Box, Grid, HStack, Stack, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 
 const technologies = [
@@ -21,12 +21,7 @@ const technologies = [
 ];
 
 export function About() {
-  const [showEmail, setShowEmail] = useState(false)
   const { idioma } = useContext(LanguageContext);
-  
-  const handleShowEmail = () => {
-    setShowEmail(true)
-  }
 
   return (
     <Stack direction={["column", "row"]} spacing={2} height={{base: "890px", md: "960px", lg: "560px"}} alignItems="center" justifyContent="center" mr={{base: "24px", md: "32px", lg: "48px"}} >
