@@ -34,7 +34,7 @@ export function Nav() {
 
   return (
     <Flex justify="space-between" align="center" pt="4">
-      <Heading as="h1" size="lg" ml={{ base: "8", md: "12" }} pt="2" color="white">
+      <Heading as="h1" size="lg" ml={{ base: "6", md: "12" }} pt="2" color="white">
         {idioma === "pt" ? "Portfólio" : "Portfolio"}
       </Heading>
 
@@ -60,7 +60,7 @@ export function Nav() {
             display="flex"
             alignItems="center"
             justifyContent="flex-end"
-            mr={{ base: "8", md: "12" }}
+            mr={{ base: "6", md: "12" }}
           >
             <IconButton
               aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
