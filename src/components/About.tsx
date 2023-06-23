@@ -24,60 +24,67 @@ export function About() {
   const { idioma } = useContext(LanguageContext);
 
   return (
-    <Stack direction={["column", "row"]} spacing={2} height={{base: "890px", md: "960px", lg: "560px"}} alignItems="center" justifyContent="center" mr={{base: "24px", md: "32px", lg: "48px"}} >
-      <Box width={["90%", "580px"]} mx={["5%", "10%"]} id="About">
+    <Stack
+      direction={["column", "row"]}
+      spacing={24}
+      height={{ base: "auto", md: "960px", lg: "560px", xl: "680px" }}
+      alignItems={["flex-start", "center"]}
+      justifyContent="center"
+      mr={{ base: "24px", md: "32px", lg: "48px", xl: "12px" }}
+      ml={{ base: "12px", xl: "12px" }}
+      px={[4, 0]}
+      p={[4, 8]}
+    >
+      <Box width={["100%", "580px", "640px"]} id="About">
         <Text as="b" fontSize={["3xl", "4xl", "5xl"]} color="white">
           {idioma === "pt" ? "Minha carreira até agora" : "My career so far"}
         </Text>
         <Stack spacing={2} mt={2}>
           <Text color="white" fontSize={["md", "lg"]}>
-            {idioma === "pt" ? 
-            "Sempre procurando um desafio, comecei a faculdade em 2016 e desde então sigo estudando." 
-            : "Always seeking a challenge, I started college in 2016 and have been studying ever since."}
+            {idioma === "pt"
+              ? "Sempre procurando um desafio, comecei a faculdade em 2016 e desde então sigo estudando."
+              : "Always seeking a challenge, I started college in 2016 and have been studying ever since."}
           </Text>
           <Text color="white" fontSize={["md", "lg"]}>
-            {idioma === "pt" ? 
-            "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos." 
-            : "With 3 years of profissional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
+            {idioma === "pt"
+              ? "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
+              : "With 3 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
           </Text>
           <Text color="white" fontSize={["md", "lg"]}>
-            {idioma === "pt" ? 
-            "Tudo se resume a minha paixão por tecnologia e aprender cada vez mais para somar dentro do time, gosto de ajudar e conversar com todos dentro do projeto, desde arte até back-end." 
-            : "It all comes down to my passion for technology and learning more and more to contribute to the team. I enjoy helping and interacting with everyone in the project, from design to back-end."}
+            {idioma === "pt"
+              ? "Tudo se resume a minha paixão por tecnologia e aprender cada vez mais para somar dentro do time, gosto de ajudar e conversar com todos dentro do projeto, desde arte até back-end."
+              : "It all comes down to my passion for technology and learning more and more to contribute to the team. I enjoy helping and interacting with everyone in the project, from design to back-end."}
           </Text>
           <Text color="white" fontSize={["md", "lg"]}>
-            {idioma === "pt" ? 
-            "Atualmente, estou trabalhando como freelancer em desenvolvimento web." 
-            : "Currently, I am working as a freelance web developer."}
+            {idioma === "pt"
+              ? "Atualmente, estou trabalhando como freelancer em desenvolvimento web."
+              : "Currently, I am working as a freelance web developer."}
           </Text>
           <HStack>
-          <Text as="b" color="white" fontSize={["md", "lg"]}>
-            {idioma === "pt" ? "Mande-me um e-mail:" : "Send me a e-mail:"}
-          </Text>
-          <Text as="span" color="white" wordBreak="break-word">
-            victor.bogdanowdornelles@gmail.com
-          </Text>
+            <Text as="b" color="white" fontSize={["md", "lg"]}>
+              {idioma === "pt" ? "Mande-me um e-mail:" : "Send me an email:"}
+            </Text>
+            <Text as="span" color="white" wordBreak="break-word">
+              victor.bogdanowdornelles@gmail.com
+            </Text>
           </HStack>
-          
         </Stack>
       </Box>
 
-      <Box mt={["2", "4"]} height="390px" width={["90%", "auto"]}>
+      <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} height="340px">
         <Box as="b" fontSize={["2xl", "3xl"]} color="white">
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
         </Box>
         <Box mt={2}>
-          <Grid templateColumns={["repeat(auto-fit, minmax(90px, 1fr))", "repeat(auto-fit, minmax(128px, 1fr))"]} gap={[2, 2, 3]} mt={2}>
+          <Grid
+            templateColumns={["repeat(auto-fit, minmax(90px, 1fr))", "repeat(auto-fit, minmax(128px, 1fr))"]}
+            gap={[2, 2, 3]}
+            mt={2}
+          >
             {technologies.map((technology) => (
-            <Box
-            key={technology.id}
-            borderWidth="1px"
-            borderRadius="md"
-            borderColor="white"
-            p={2}
-            >
-              <Text color="white">{technology.name}</Text>
-            </Box>
+              <Box key={technology.id} borderWidth="1px" borderRadius="md" borderColor="white" p={2}>
+                <Text color="white">{technology.name}</Text>
+              </Box>
             ))}
           </Grid>
         </Box>

@@ -58,7 +58,6 @@ export function Apresentation() {
             </Heading>
             <Text
               ml={{ base: "0", md: "20%", lg: "30%", xl:"40%"}}
-              width={{ base: "100%", md: "80%", lg: "60%", xl: "50%", "2xl": "40%" }}
               fontSize={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
               color="white"
               textAlign={{ base: "center", md: "left" }}
