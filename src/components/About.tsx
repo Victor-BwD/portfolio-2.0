@@ -30,8 +30,8 @@ export function About() {
       height={{ base: "auto", md: "960px", lg: "560px", xl: "680px" }}
       alignItems={["flex-start", "center"]}
       justifyContent="center"
-      mr={{ base: "24px", md: "32px", lg: "48px", xl: "12px" }}
-      ml={{ base: "12px", xl: "12px" }}
+     
+      ml={{ base: "0px", md: "0px", lg: "12px" }}
       px={[4, 0]}
       p={[4, 8]}
     >
@@ -70,8 +70,15 @@ export function About() {
           </HStack>
         </Stack>
       </Box>
+      
+      <Box
+      width={{ base: "100%", xl: "23%" }}
+      ml={{ base: 0, xl: "24px" }}
+      display={{ base: "none", xl: "block" }}
+      />
 
-      <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} height="340px">
+
+      <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} >
         <Box as="b" fontSize={["2xl", "3xl"]} color="white">
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
         </Box>
