@@ -1,16 +1,19 @@
 import React from 'react';
-import { HeroSection } from './views/HeroSection';
-import { ProjectsView } from './views/ProjectsView';
+
 import { LanguageProvider } from './context/LanguageContext';
-import { AboutView } from './views/AboutView';
+
+import { Home } from './views/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
     <LanguageProvider>
-        <HeroSection />
-        <ProjectsView />
-        <AboutView />
+        <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </LanguageProvider>
   );
 }

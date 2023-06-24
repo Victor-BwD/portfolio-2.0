@@ -1,5 +1,5 @@
 import { Box, Text, Heading, Flex, HStack, extendTheme, ChakraProvider, Icon } from '@chakra-ui/react'
-import { GithubIcon, InstagramIcon, LinkedinIcon } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from 'lucide-react'
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 
@@ -36,11 +36,6 @@ export function Apresentation() {
                 <Box backgroundColor="white" rounded="10px">
                   <a href='https://www.linkedin.com/in/victorbwd/' target='_blank' rel="noreferrer">
                     <Icon as={LinkedinIcon} boxSize={{ base: "42px", md: "68px" }} color="black" mt="2"/>
-                  </a>
-                </Box>
-                <Box backgroundColor="white" rounded="10px">
-                  <a href='https://www.instagram.com/victor_bwd/' target='_blank' rel="noreferrer">
-                    <Icon as={InstagramIcon} boxSize={{ base: "42px", md: "68px" }} color="black" mt="2"/>
                   </a>
                 </Box>
               </HStack>
