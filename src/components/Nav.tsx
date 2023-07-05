@@ -11,13 +11,24 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useContext, useEffect } from "react";
 import { LanguageContext } from "../context/LanguageContext";
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, scroller } from 'react-scroll';
+import {useNavigate} from 'react-router-dom';
 
 export function Nav() {
   const { idioma, alternarIdioma } = useContext(LanguageContext);
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [isNotMobile] = useMediaQuery("(min-width: 768px)");
 
+  const navigation = useNavigate();
+  const handleScrollToSection  = (sectionId: string) => {
+    navigation(`/#${sectionId}`)
+    
+    scroller.scrollTo(sectionId, {
+      smooth: true,
+      duration: 400,
+      offset: -100,
+    });
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +43,15 @@ export function Nav() {
     };
   }, [isNotMobile, onClose]);
 
+  useEffect(() => {
+    const sectionId = window.location.hash.substr(1);
+    if (sectionId === "projects" || sectionId === "About") {
+      handleScrollToSection(sectionId);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+
   return (
     <Flex justify="space-between" align="center" pt="4">
       <Heading as="h1" size="lg" ml={{ base: "6", md: "12" }} pt="2" color="white">
@@ -41,12 +61,12 @@ export function Nav() {
       {isNotMobile ? (
         <HStack gap="4" mr={{ base: "8", md: "12" }} mt="2">
           <ScrollLink to="projects" smooth={true} duration={400}>
-            <Button size="lg">
+            <Button size="lg" onClick={() => handleScrollToSection("projects")}>
               {idioma === "pt" ? "Projetos" : "Projects"}
             </Button>
           </ScrollLink>
           <ScrollLink to="About" smooth={true} duration={400}>
-            <Button size="lg">
+            <Button size="lg" onClick={() => handleScrollToSection("About")}>
               {idioma === "pt" ? "Sobre" : "About"}
             </Button>
           </ScrollLink>
