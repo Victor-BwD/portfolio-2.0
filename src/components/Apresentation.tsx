@@ -58,8 +58,8 @@ export function Apresentation() {
               textAlign={{ base: "center", md: "left" }}
               mb={{ base: "8", md: "12", lg: "16" }}
             >
-              {idioma === "pt" ? "27 anos, com 3 anos de experiência em tecnologia. Tenho experiência tanto em desenvolvimento de jogos quanto front-end e back-end." 
-              : "27 years old, with 3 years of experience in technology. I have experience in both game development and front-end and back-end development."}
+              {idioma === "pt" ? "27 anos, com 2 anos e meio de experiência em tecnologia. Tenho experiência tanto em desenvolvimento de jogos quanto front-end e back-end." 
+              : "27 years old, with 2 years and half of experience in technology. I have experience in both game development and front-end and back-end development."}
             </Text>
           </Box>
         </Box>
