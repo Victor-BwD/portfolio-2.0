@@ -59,7 +59,7 @@ export function ProjectDisplay({project } : ProjectDisplayProps) {
 
     <Image
       src={project.image}
-      alt="Dan Abramov"
+      alt="Imagem do projeto"
       width="100%"
       maxWidth="720px"
       order={{ base: "1", md: "2" }}
