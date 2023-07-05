@@ -44,7 +44,7 @@ export const projectsInfo = [
     image: 'https://i.imgur.com/68UnNQb.png',
     description: 'Uma cópia da calculadora do windows feita em React.',
     descriptionEnglish: 'A copy of windows calculator made in React.',
-    descriptionForProjectView: 'Projeto realizado como um desafio do curso de React que eu estava fazendo, a calculadora não está 100% fiel e falta algumas equações, mas está funcionando para os calculos mais simples.',
+    descriptionForProjectView: 'Projeto realizado como um desafio do curso de React que eu estava fazendo, a calculadora não está 100% fiel e falta algumas equações, mas está funcionando para os cálculos mais simples.',
     descriptionForProjectViewEnglish: 'Project completed as a challenge for the React course I was taking. The calculator is not 100% accurate and lacks some equations, but it is functional for basic calculations.',
     source: '/project/2',
     projectSite: 'https://calculator-react-js-ten.vercel.app',
