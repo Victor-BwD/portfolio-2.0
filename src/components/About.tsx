@@ -63,8 +63,8 @@ export function About() {
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
-              ? "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
-              : "With 3 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
+              ? "Com 2 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
+              : "With 2 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
           </Text>
           <Text color="white" fontSize={["md", "lg"]}>
             {idioma === "pt"
@@ -95,8 +95,6 @@ export function About() {
       ml={{ base: 0, xl: "24px" }}
       display={{ base: "none", xl: "block" }}
       />
-
-
       <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} >
         <Box as="b" fontSize={["2xl", "3xl"]} color="#E4F2FF">
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
