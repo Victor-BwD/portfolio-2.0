@@ -1,6 +1,7 @@
-import { Box, Grid, HStack, Stack, Text } from "@chakra-ui/react";
-import { useContext } from "react";
+import { Box, Button, Grid, HStack, Stack, Text } from "@chakra-ui/react";
+import { useContext, useState, useRef } from "react";
 import { LanguageContext } from "../context/LanguageContext";
+import { Copy, CopyCheck } from "lucide-react";
 
 const technologies = [
   { id: 1, name: "ReactJS" },
@@ -20,8 +21,23 @@ const technologies = [
   { id: 15, name: "Git" },
 ];
 
+
+
 export function About() {
   const { idioma } = useContext(LanguageContext);
+  const [ emailCopied, setEmailCopied ] = useState(false);
+
+  const handleCopyEmail = () => {
+    const emailInput = document.getElementById("email");
+    if (emailInput) {
+      navigator.clipboard.writeText(emailInput.innerHTML);
+      setEmailCopied(true);
+    }
+  };
+
+  setTimeout(() => {
+    setEmailCopied(false);
+  }, 3000);
 
   return (
     <Stack
@@ -64,9 +80,12 @@ export function About() {
             <Text as="b" color="#E4F2FF" fontSize={["md", "lg"]}>
               {idioma === "pt" ? "Mande-me um e-mail:" : "Send me an email:"}
             </Text>
-            <Text as="span" color="#E4F2FF" wordBreak="break-word">
+            <Text as="span" id="email" color="#E4F2FF" wordBreak="break-word">
               victor.bogdanowdornelles@gmail.com
             </Text>
+            {!emailCopied ? 
+            <Button size="sm" onClick={handleCopyEmail}><Copy /></Button> 
+            : <Button size="sm"><CopyCheck /></Button>}
           </HStack>
         </Stack>
       </Box>
