@@ -84,8 +84,8 @@ export function About() {
               victor.bogdanowdornelles@gmail.com
             </Text>
             {!emailCopied ? 
-            <Button size="sm" onClick={handleCopyEmail}><Copy /></Button> 
-            : <Button size="sm"><CopyCheck /></Button>}
+            <Button size="sm" onClick={handleCopyEmail}><Copy size="19px"/></Button> 
+            : <Button size="sm"><CopyCheck size="19px"/></Button>}
           </HStack>
         </Stack>
       </Box>
