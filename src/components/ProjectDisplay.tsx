@@ -17,19 +17,18 @@ interface ProjectDisplayProps {
   };
 }
 
-export function ProjectDisplay({project } : ProjectDisplayProps) {
+export function ProjectDisplay({ project } : ProjectDisplayProps) {
   const { idioma } = useContext(LanguageContext);
   
-
   return (
     <Box
-  display="flex"
-  justifyContent="center"
-  flexDirection="column"
-  alignItems="center"
-  height="100vh"
-  p="8"
->
+    display="flex"
+    justifyContent="center"
+    flexDirection="column"
+    alignItems="center"
+    height="100vh"
+    p="8"
+  >
   <Text as="b" textAlign="center" fontSize="5xl" mb="20px" color="#E4F2FF">
     {idioma === "pt" ? "Detalhes do Projeto" : "Project Details"}
   </Text>
