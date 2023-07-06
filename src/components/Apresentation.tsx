@@ -20,11 +20,11 @@ export function Apresentation() {
       <Flex height="95vh" alignItems="center" justifyContent="center" ml="8" p="2" mr="8">
         <Box>
           <Box>
-            <Text fontSize={{ base: "xl", md: "3xl" }} ml={{ base: "1", md: "2" }} color="white" as="b">
+            <Text fontSize={{ base: "xl", md: "3xl" }} ml={{ base: "1", md: "2" }} color="#E4F2FF" as="b">
               {idioma === "pt" ? "Olá, meu nome é Victor" : "Hello, my name is Victor"}
             </Text>
             <HStack spacing={{base: "4", md: "6"}} alignItems="center" height="106px">
-              <Heading as="h1" fontSize={{ base: "5xl", sm: "6x1", md: "7xl", lg: "9xl" }} color="white">
+              <Heading as="h1" fontSize={{ base: "5xl", sm: "6x1", md: "7xl", lg: "9xl" }} color="#E4F2FF">
                 Software
               </Heading>
               <HStack spacing="4" alignItems="center" pt="7">
@@ -45,7 +45,7 @@ export function Apresentation() {
               pr={{base: "42px", md: "0", lg: "0", xl: "0"}}
               ml={{base: "0px", md: "15%", lg: "15%", xl: "15%"}}
               fontSize={{ base: "5xl", sm: "6x1", md: "8xl", lg: "9xl" }}
-              color="white"
+              color="#E4F2FF"
               textAlign={{ base: "center", md: "left" }}
               mb={{ base: "2", md: "4", lg: "8" }}
             >
@@ -54,7 +54,7 @@ export function Apresentation() {
             <Text
               ml={{ base: "0", md: "20%", lg: "30%", xl:"40%"}}
               fontSize={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
-              color="white"
+              color="#BFDEFF"
               textAlign={{ base: "center", md: "left" }}
               mb={{ base: "8", md: "12", lg: "16" }}
             >

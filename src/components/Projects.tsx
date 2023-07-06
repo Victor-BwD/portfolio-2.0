@@ -70,10 +70,10 @@ export function Projects() {
   return (
     <ChakraProvider theme={theme}>
       <Flex alignItems="center" justifyContent="center" flexDirection="column" id="projects" pt="4">
-        <Text as="b" fontSize="4xl" color="white" mb="2">
+        <Text as="b" fontSize="4xl" color="#E4F2FF" mb="2">
           {idioma === "pt" ? "Meus projetos" : "My Projects"}
         </Text>
-        <Text as="b" fontSize="2xl" color="white" mb="2" p={{base: "12px", md: "0"}}>
+        <Text as="b" fontSize="2xl" color="#E4F2FF" mb="2" p={{base: "12px", md: "0"}}>
           {idioma === "pt" ? "Alguns dos meus projetos que fiz no meu tempo livre" : "Some of the projects I did in my free time."}
         </Text>
       </Flex>

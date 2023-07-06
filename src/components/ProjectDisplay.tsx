@@ -30,7 +30,7 @@ export function ProjectDisplay({project } : ProjectDisplayProps) {
   height="100vh"
   p="8"
 >
-  <Text as="b" textAlign="center" fontSize="5xl" mb="20px" color="#fff">
+  <Text as="b" textAlign="center" fontSize="5xl" mb="20px" color="#E4F2FF">
     {idioma === "pt" ? "Detalhes do Projeto" : "Project Details"}
   </Text>
 
@@ -39,11 +39,11 @@ export function ProjectDisplay({project } : ProjectDisplayProps) {
     alignItems="center"
     justifyContent="center"
     mt="8"
-    width={{ base: "100%", md: "800px", lg: "965px" }}
+    width={{ base: "100%", md: "800px", lg: "965px", xl: "1080px" }}
     maxWidth="100%"
   >
     <Text
-      color="#fff"
+      color="#E4F2FF"
       fontSize="lg"
       textAlign={{ base: "center", md: "left" }}
       order={{ base: "2", md: "1" }}

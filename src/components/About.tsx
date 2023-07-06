@@ -36,16 +36,16 @@ export function About() {
       p={[4, 8]}
     >
       <Box width={["100%", "580px", "640px"]} id="About">
-        <Text as="b" fontSize={["3xl", "4xl", "5xl"]} color="white">
+        <Text as="b" fontSize={["3xl", "4xl", "5xl"]} color="#E4F2FF">
           {idioma === "pt" ? "Minha carreira até agora" : "My career so far"}
         </Text>
         <Stack spacing={2} mt={2}>
-          <Text color="white" fontSize={["md", "lg"]}>
+          <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
               ? "Sempre procurando um desafio, comecei a faculdade em 2016 e desde então sigo estudando."
               : "Always seeking a challenge, I started college in 2016 and have been studying ever since."}
           </Text>
-          <Text color="white" fontSize={["md", "lg"]}>
+          <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
               ? "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
               : "With 3 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
@@ -61,10 +61,10 @@ export function About() {
               : "Currently, I am working as a freelance web developer."}
           </Text>
           <HStack>
-            <Text as="b" color="white" fontSize={["md", "lg"]}>
+            <Text as="b" color="#E4F2FF" fontSize={["md", "lg"]}>
               {idioma === "pt" ? "Mande-me um e-mail:" : "Send me an email:"}
             </Text>
-            <Text as="span" color="white" wordBreak="break-word">
+            <Text as="span" color="#E4F2FF" wordBreak="break-word">
               victor.bogdanowdornelles@gmail.com
             </Text>
           </HStack>
@@ -79,7 +79,7 @@ export function About() {
 
 
       <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} >
-        <Box as="b" fontSize={["2xl", "3xl"]} color="white">
+        <Box as="b" fontSize={["2xl", "3xl"]} color="#E4F2FF">
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
         </Box>
         <Box mt={2}>
@@ -90,7 +90,7 @@ export function About() {
           >
             {technologies.map((technology) => (
               <Box key={technology.id} borderWidth="1px" borderRadius="md" borderColor="white" p={2}>
-                <Text color="white">{technology.name}</Text>
+                <Text color="#E4F2FF">{technology.name}</Text>
               </Box>
             ))}
           </Grid>
