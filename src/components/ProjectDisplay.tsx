@@ -66,7 +66,7 @@ export function ProjectDisplay({ project } : ProjectDisplayProps) {
     </Flex>
 
     <Flex flexDirection="row" justifyContent="center" mt="8">
-      <Button as={Link} colorScheme="gray" mr="4" href={project.projectSite}>
+      <Button as={Link} colorScheme="gray" mr="8" href={project.projectSite}>
         {idioma === "pt" ? <p>Rodar Projeto</p> : <p>Run Project</p>}
       </Button>
       <Button as={Link} colorScheme="gray" href={project.repository}>
