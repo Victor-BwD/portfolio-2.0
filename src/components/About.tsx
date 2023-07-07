@@ -1,5 +1,5 @@
 import { Box, Button, Grid, HStack, Stack, Text } from "@chakra-ui/react";
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { Copy, CopyCheck } from "lucide-react";
 
