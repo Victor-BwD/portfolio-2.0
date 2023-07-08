@@ -66,12 +66,12 @@ export function About() {
               ? "Com 2 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
               : "With 2 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
           </Text>
-          <Text color="white" fontSize={["md", "lg"]}>
+          <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
               ? "Tudo se resume a minha paixão por tecnologia e aprender cada vez mais para somar dentro do time, gosto de ajudar e conversar com todos dentro do projeto, desde arte até back-end."
               : "It all comes down to my passion for technology and learning more and more to contribute to the team. I enjoy helping and interacting with everyone in the project, from design to back-end."}
           </Text>
-          <Text color="white" fontSize={["md", "lg"]}>
+          <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
               ? "Atualmente, estou trabalhando como freelancer em desenvolvimento web e atuando como fullstack na empresa Lighthouse."
               : "Currently, I am working as a freelance web developer and working as a full-stack developer at Lighthouse company."}
