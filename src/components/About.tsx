@@ -46,8 +46,7 @@ export function About() {
       height={{ base: "auto", md: "960px", lg: "560px", xl: "680px" }}
       alignItems={["flex-start", "center"]}
       justifyContent="center"
-     
-      ml={{ base: "0px", md: "0px", lg: "12px" }}
+      ml={{ lg: "12px" }}
       px={[4, 0]}
       p={[4, 8]}
     >

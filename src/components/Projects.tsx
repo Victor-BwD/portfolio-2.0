@@ -42,8 +42,8 @@ export const projectsInfo = [
     id: 2,
     name: 'Projeto 2',
     image: 'https://i.imgur.com/68UnNQb.png',
-    description: 'Uma cópia da calculadora do windows feita em React.',
-    descriptionEnglish: 'A copy of windows calculator made in React.',
+    description: 'Uma cópia da calculadora do windows em React.',
+    descriptionEnglish: 'A copy of windows calculator in React.',
     descriptionForProjectView: 'Projeto realizado como um desafio do curso de React que eu estava fazendo, a calculadora não está 100% fiel e falta algumas equações, mas está funcionando para os cálculos mais simples.',
     descriptionForProjectViewEnglish: 'Project completed as a challenge for the React course I was taking. The calculator is not 100% accurate and lacks some equations, but it is functional for basic calculations.',
     source: '/project/2',
@@ -73,7 +73,7 @@ export function Projects() {
         <Text as="b" fontSize="4xl" color="#E4F2FF" mb="2">
           {idioma === "pt" ? "Meus projetos" : "My Projects"}
         </Text>
-        <Text as="b" fontSize="2xl" color="#E4F2FF" mb="2" p={{base: "12px", md: "0"}}>
+        <Text as="b" fontSize="2xl" color="#E4F2FF" mb="2" p={{base: "12px", md: "0"}} textAlign="center">
           {idioma === "pt" ? "Alguns dos meus projetos que fiz no meu tempo livre" : "Some of the projects I did in my free time."}
         </Text>
       </Flex>
