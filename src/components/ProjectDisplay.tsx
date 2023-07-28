@@ -25,7 +25,7 @@ export function ProjectDisplay({ project }: ProjectDisplayProps) {
       <Text as="b" fontSize="5xl" mb="20px" color="#E4F2FF">
         {idioma === "pt" ? "Detalhes do Projeto" : "Project Details"}
       </Text>
-      <Flex flexDirection={{ base: "column", md: "row" }} alignItems="center" justifyContent="center" mt="8" maxWidth="1080px" mx="auto">
+      <Flex flexDirection={{ base: "column", md: "row" }} alignItems="center" justifyContent="center" mt="8" width="auto" pr={{lg: 4}} mx="auto">
         <Text color="#E4F2FF" fontSize="lg" mb={{ base: "8", md: "0" }} mr={{ base: "0", md: "12" }}>
           {idioma === "pt" ? project.descriptionForProjectView : project.descriptionForProjectViewEnglish}
         </Text>
