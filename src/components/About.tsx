@@ -45,8 +45,9 @@ export function About() {
       spacing={24}
       height={{ base: "auto", md: "960px", lg: "560px", xl: "680px" }}
       alignItems={["flex-start", "center"]}
-      justifyContent="center"
-      ml={{ lg: "12px" }}
+      justifyContent="space-between"
+      ml={{ lg: "13px" }}
+      mr={{lg: "13px"}}
       px={[4, 0]}
       p={[4, 8]}
     >
@@ -89,11 +90,6 @@ export function About() {
         </Stack>
       </Box>
       
-      <Box
-      width={{ base: "100%", xl: "23%" }}
-      ml={{ base: 0, xl: "24px" }}
-      display={{ base: "none", xl: "block" }}
-      />
       <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} >
         <Box as="b" fontSize={["2xl", "3xl"]} color="#E4F2FF">
           {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
