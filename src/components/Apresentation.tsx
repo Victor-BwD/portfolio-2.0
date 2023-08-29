@@ -21,7 +21,7 @@ export function Apresentation() {
         <Box>
           <Box>
             <Text fontSize={{ base: "xl", md: "3xl" }} ml={{ base: "1", md: "2" }} color="#E4F2FF" as="b">
-              {idioma === "pt" ? "Olá, meu nome é Victor" : "Hello, my name is Victor"}
+              Victor Bogdanow Dornelles
             </Text>
             <HStack spacing={{base: "4", md: "6"}} alignItems="center" height="106px">
               <Heading as="h1" fontSize={{ base: "5xl", sm: "6x1", md: "7xl", lg: "9xl" }} color="#E4F2FF">
@@ -58,8 +58,8 @@ export function Apresentation() {
               textAlign={{ base: "center", md: "left" }}
               mb={{ base: "8", md: "12", lg: "16" }}
             >
-              {idioma === "pt" ? "27 anos, com 2 anos e meio de experiência em tecnologia. Tenho experiência tanto em desenvolvimento de jogos quanto front-end e back-end." 
-              : "27 years old, with 2 years and half of experience in technology. I have experience in both game development and front-end and back-end development."}
+              {idioma === "pt" ? "Sou apaixonado pelo o que eu faço e estou sempre me esforçando para trabalhar em produtos completos, que desenvolvam sistemas sociais e técnicos sustentáveis e escaláveis para criar um impacto significativo." 
+              : "I am passionate about what I do and I am always striving to work on complete products that develop sustainable and scalable social and technical systems to create a significant impact."}
             </Text>
           </Box>
         </Box>
