@@ -3,6 +3,7 @@ import { Apresentation } from "../components/Apresentation";
 import { Nav } from "../components/Nav";
 import { Projects } from "../components/Projects";
 import { About } from "../components/About";
+import { Footer } from "../components/Footer";
 
 
 export function Home() {
@@ -12,6 +13,7 @@ export function Home() {
         <Apresentation/>
         <Projects />
         <About />
+        <Footer />
     </Box>
   )
 }

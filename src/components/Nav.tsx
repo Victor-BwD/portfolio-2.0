@@ -55,7 +55,7 @@ export function Nav() {
   return (
     <Flex justify="space-between" align="center" pt="4">
       <Heading as="h1" size="lg" ml={{ base: "6", md: "12" }} pt="2" color="#E4F2FF">
-        {idioma === "pt" ? "Portfólio" : "Portfolio"}
+        {idioma === "pt" ? "< Portfólio />" : "< Portfolio />"}
       </Heading>
 
       {isNotMobile ? (
