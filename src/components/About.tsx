@@ -10,22 +10,26 @@ const technologies = [
   { id: 4, name: "Typescript" },
   { id: 5, name: "Node.js" },
   { id: 6, name: "HTML/CSS" },
-  { id: 7, name: "BabylonJS" },
-  { id: 8, name: "C#" },
-  { id: 9, name: "Unity" },
-  { id: 10, name: "Java" },
-  { id: 11, name: "MySQL" },
-  { id: 12, name: "MongoDB" },
-  { id: 13, name: "APIRest" },
-  { id: 14, name: "Looker Studio" },
-  { id: 15, name: "Git" },
+  { id: 7, name: "Jest" },
+  { id: 8, name: "Babylon.js" },
+  { id: 9, name: "C#" },
+  { id: 10, name: "Unity" },
+  { id: 11, name: "Java/Spring Boot" },
+  { id: 12, name: "PostgreSQL" },
+  { id: 13, name: "MongoDB" },
+  { id: 14, name: "API Restful" },
+  { id: 15, name: "Looker Studio" },
+  { id: 16, name: "Git" },
+  { id: 17, name: "Docker" },
+  { id: 18, name: "AWS" },
+  { id: 19, name: "Microservices" },
+  { id: 20, name: "UT/IT" },
+  { id: 21, name: "Scrum" },
 ];
-
-
 
 export function About() {
   const { idioma } = useContext(LanguageContext);
-  const [ emailCopied, setEmailCopied ] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   const handleCopyEmail = () => {
     const emailInput = document.getElementById("email");
@@ -47,7 +51,7 @@ export function About() {
       alignItems={["flex-start", "center"]}
       justifyContent="space-between"
       ml={{ lg: "13px" }}
-      mr={{lg: "13px"}}
+      mr={{ lg: "13px" }}
       px={[4, 0]}
       p={[4, 8]}
     >
@@ -83,25 +87,42 @@ export function About() {
             <Text as="span" id="email" color="#E4F2FF" wordBreak="break-word">
               victor.bogdanowdornelles@gmail.com
             </Text>
-            {!emailCopied ? 
-            <Button size="sm" onClick={handleCopyEmail}><Copy size="19px"/></Button> 
-            : <Button size="sm"><CopyCheck size="19px"/></Button>}
+            {!emailCopied ? (
+              <Button size="sm" onClick={handleCopyEmail}>
+                <Copy size="19px" />
+              </Button>
+            ) : (
+              <Button size="sm">
+                <CopyCheck size="19px" />
+              </Button>
+            )}
           </HStack>
         </Stack>
       </Box>
-      
-      <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]} >
+
+      <Box mt={["2", "4"]} width={["100%", "auto"]} ml={[0, "12px"]}>
         <Box as="b" fontSize={["2xl", "3xl"]} color="#E4F2FF">
-          {idioma === "pt" ? "Tecnologias que tenho experiência:" : "Technologies I have experience with:"}
+          {idioma === "pt"
+            ? "Tecnologias que tenho experiência:"
+            : "Technologies I have experience with:"}
         </Box>
         <Box mt={2}>
           <Grid
-            templateColumns={["repeat(auto-fit, minmax(90px, 1fr))", "repeat(auto-fit, minmax(128px, 1fr))"]}
+            templateColumns={[
+              "repeat(auto-fit, minmax(90px, 1fr))",
+              "repeat(auto-fit, minmax(128px, 1fr))",
+            ]}
             gap={[2, 2, 3]}
             mt={2}
           >
             {technologies.map((technology) => (
-              <Box key={technology.id} borderWidth="1px" borderRadius="md" borderColor="white" p={2}>
+              <Box
+                key={technology.id}
+                borderWidth="1px"
+                borderRadius="md"
+                borderColor="white"
+                p={2}
+              >
                 <Text color="#E4F2FF">{technology.name}</Text>
               </Box>
             ))}
@@ -109,5 +130,5 @@ export function About() {
         </Box>
       </Box>
     </Stack>
-  )
+  );
 }
