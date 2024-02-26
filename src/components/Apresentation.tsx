@@ -51,8 +51,9 @@ export function Apresentation() {
             >
               <Heading
                 as="h1"
-                fontSize={{ base: "5xl", sm: "6x1", md: "7xl", lg: "9xl" }}
+                fontSize={{ base: "5xl", sm: "6x1", md: "8xl", lg: "9xl" }}
                 color="#E4F2FF"
+                height={{ base: "42px", sm: "62px", md: "90px", lg: "152px" }}
               >
                 Fullstack
               </Heading>
