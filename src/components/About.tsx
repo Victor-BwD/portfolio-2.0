@@ -67,8 +67,8 @@ export function About() {
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
-              ? "Com 2 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
-              : "With 2 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
+              ? "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
+              : "With 3 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"

@@ -107,8 +107,8 @@ export function Apresentation() {
               mb={{ base: "8", md: "12", lg: "16" }}
             >
               {idioma === "pt"
-                ? "Sou apaixonado pelo o que eu faço e estou sempre me esforçando para trabalhar em produtos completos, que desenvolvam sistemas sociais e técnicos sustentáveis e escaláveis para criar um impacto significativo."
-                : "I am passionate about what I do and I am always striving to work on complete products that develop sustainable and scalable social and technical systems to create a significant impact."}
+                ? "Com 3 anos de experiência em desenvolvimento de software, trabalho com foco em resultados e prezando pela qualidade da entrega."
+                : "With 3 years of experience in software development, I work with a focus on delivering results while prioritizing the quality of delivery."}
             </Text>
           </Box>
         </Box>
