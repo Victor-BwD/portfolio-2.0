@@ -72,13 +72,13 @@ export function About() {
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
-              ? "Tudo se resume a minha paixão por tecnologia e aprender cada vez mais para somar dentro do time, gosto de ajudar e conversar com todos dentro do projeto, desde arte até back-end."
-              : "It all comes down to my passion for technology and learning more and more to contribute to the team. I enjoy helping and interacting with everyone in the project, from design to back-end."}
+              ? "Gosto de aprender cada vez mais visando entregar projetos mais complexos e para somar dentro do time, gosto de ajudar e conversar com todos dentro do projeto, desde arte até back-end."
+              : "I enjoy continuously learning to deliver increasingly complex projects and to contribute effectively within the team. I take pleasure in assisting and engaging with all team members throughout the project, from artwork to back-end development."}
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
-              ? "Atualmente, estou trabalhando como freelancer em desenvolvimento web e atuando como fullstack na empresa Lighthouse."
-              : "Currently, I am working as a freelance web developer and working as a full-stack developer at Lighthouse company."}
+              ? "Atualmente atuando como fullstack na empresa Lighthouse."
+              : "Currently, I am working as a full-stack developer at Lighthouse company."}
           </Text>
           <HStack>
             <Text as="b" color="#E4F2FF" fontSize={["md", "lg"]}>
