@@ -52,6 +52,7 @@ export function About() {
       justifyContent="space-between"
       ml={{ lg: "13px" }}
       mr={{ lg: "13px" }}
+      mb={{ base: "42px", md: "24px", lg: "24px", xl: "24px" }}
       px={[4, 0]}
       p={[4, 8]}
     >

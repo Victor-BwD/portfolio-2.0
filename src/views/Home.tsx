@@ -5,15 +5,14 @@ import { Projects } from "../components/Projects";
 import { About } from "../components/About";
 import { Footer } from "../components/Footer";
 
-
 export function Home() {
   return (
     <Box backgroundColor="#0B214D">
-        <Nav />
-        <Apresentation/>
-        <Projects />
-        <About />
-        <Footer />
+      <Nav />
+      <Apresentation />
+      <About />
+      <Projects />
+      <Footer />
     </Box>
-  )
+  );
 }
