@@ -20,11 +20,8 @@ const technologies = [
   { id: 14, name: "API Restful" },
   { id: 15, name: "Looker Studio" },
   { id: 16, name: "Git" },
-  { id: 17, name: "Docker" },
-  { id: 18, name: "AWS" },
-  { id: 19, name: "Microservices" },
-  { id: 20, name: "UT/IT" },
-  { id: 21, name: "Scrum" },
+  { id: 17, name: "UT/IT" },
+  { id: 18, name: "Scrum" },
 ];
 
 export function About() {
