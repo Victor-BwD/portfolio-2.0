@@ -13,7 +13,7 @@ const technologies = [
   { id: 7, name: "Jest" },
   { id: 8, name: "Babylon.js" },
   { id: 9, name: "C#" },
-  { id: 10, name: "Unity" },
+  { id: 10, name: "Docker" },
   { id: 11, name: "Java/Spring Boot" },
   { id: 12, name: "PostgreSQL" },
   { id: 13, name: "MongoDB" },
