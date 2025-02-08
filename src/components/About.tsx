@@ -61,12 +61,12 @@ export function About() {
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
               ? "Sempre procurando um desafio, comecei a faculdade em 2016 e desde então sigo estudando."
-              : "Always seeking a challenge, I started college in 2016 and have been studying ever since."}
+              : "I began my academic journey in 2016 and have been continuously improving my skills in the technology field ever since."}
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
-              ? "Com 3 anos de experiência profissional, trabalhei em diversos ramos da tecnologia, como experiências únicas em engenharia de dados, desenvolvimento web e desenvolvimento de jogos."
-              : "With 3 years of professional experience, I have worked in various fields of technology, such as unique experiences in data engineering, web development, and game development."}
+              ? "Com três anos de experiência profissional, atuei em diferentes setores, incluindo engenharia de dados, desenvolvimento web e desenvolvimento de jogos, adquirindo uma visão ampla e integrada do setor."
+              : "With three years of professional experience, I have worked in different sectors, including data engineering, web development, and game development, gaining a broad and integrated perspective of the industry."}
           </Text>
           <Text color="#E4F2FF" fontSize={["md", "lg"]}>
             {idioma === "pt"
