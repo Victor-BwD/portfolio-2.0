@@ -22,49 +22,78 @@ export function ProjectDisplay({ project }: ProjectDisplayProps) {
 
   return (
     <Box
-      p="8"
+      p={{ base: 6, md: 10 }}
       textAlign="center"
-      height="100vh"
+      minH="100vh"
       display="flex"
       flexDirection="column"
       justifyContent="center"
+      alignItems="center"
     >
-      <Text as="b" fontSize="5xl" mb="20px" color="#E4F2FF">
+      <Text
+        as="b"
+        fontSize={{ base: "2xl", md: "4xl" }}
+        mb={{ base: 6, md: 8 }}
+        color="#E4F2FF"
+      >
         {idioma === "pt" ? "Detalhes do Projeto" : "Project Details"}
       </Text>
+
       <Flex
-        flexDirection={{ base: "column", md: "row" }}
-        alignItems="center"
-        justifyContent="center"
-        mt="8"
-        width="auto"
-        pr={{ lg: 4 }}
-        mx="auto"
+        direction={{ base: "column", md: "row" }}
+        align="center"
+        justify="center"
+        gap={{ base: 6, md: 12 }}
+        maxW="1200px"
+        w="full"
+        px={{ base: 4, md: 8 }}
       >
         <Text
           color="#E4F2FF"
-          fontSize="lg"
-          mb={{ base: "8", md: "0" }}
-          mr={{ base: "0", md: "12" }}
+          fontSize={{ base: "md", md: "lg" }}
+          maxW="600px"
+          textAlign="justify"
+          lineHeight="taller"
         >
           {idioma === "pt"
             ? project.descriptionForProjectView
             : project.descriptionForProjectViewEnglish}
         </Text>
+
         <Image
           src={project.image}
           alt="Imagem do projeto"
-          width="100%"
-          maxWidth="720px"
+          w={{ base: "100%", md: "600px" }}
+          borderRadius="lg"
+          shadow="2xl"
         />
       </Flex>
 
-      <Flex flexDirection="row" justifyContent="center" mt="8">
-        <Button as={Link} colorScheme="gray" mr="8" href={project.projectSite}>
-          {idioma === "pt" ? <p>Rodar Projeto</p> : <p>Run Project</p>}
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        justify="center"
+        gap={4}
+        mt={10}
+      >
+        <Button
+          as={Link}
+          href={project.projectSite}
+          colorScheme="blue"
+          size="lg"
+          px={8}
+          isExternal
+        >
+          {idioma === "pt" ? "Rodar Projeto" : "Run Project"}
         </Button>
-        <Button as={Link} colorScheme="gray" href={project.repository}>
-          {idioma === "pt" ? <p>Código</p> : <p>Code</p>}
+        <Button
+          as={Link}
+          href={project.repository}
+          colorScheme="teal"
+          size="lg"
+          px={8}
+          isExternal
+        >
+          {idioma === "pt" ? "Código" : "Code"}
         </Button>
       </Flex>
     </Box>
