@@ -69,6 +69,7 @@ export function Apresentation() {
                       boxSize={{ base: "42px", md: "68px" }}
                       color="black"
                       mt="2"
+                      _hover={{ color: "blue.500" }}
                     />
                   </a>
                 </Box>
@@ -83,6 +84,7 @@ export function Apresentation() {
                       boxSize={{ base: "42px", md: "68px" }}
                       color="black"
                       mt="2"
+                      _hover={{ color: "blue.500" }}
                     />
                   </a>
                 </Box>
