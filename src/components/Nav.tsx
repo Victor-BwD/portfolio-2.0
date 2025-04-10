@@ -7,6 +7,7 @@ import {
   Box,
   useDisclosure,
   useMediaQuery,
+  VStack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useContext, useEffect } from "react";
@@ -51,6 +52,15 @@ export function Nav() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/Currículo Victor B. Dornelles.pdf";
+    link.download = "Currículo Victor B. Dornelles.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <Flex justify="space-between" align="center" pt="4">
       <Heading
@@ -65,6 +75,16 @@ export function Nav() {
 
       {isNotMobile ? (
         <HStack gap="4" mr={{ base: "8", md: "12" }} mt="2">
+          <Button
+            size="lg"
+            onClick={() => downloadCV()}
+            bg="blue.500"
+            color="white"
+            _hover={{ bg: "blue.600" }}
+          >
+            {idioma === "pt" ? "Baixe meu currículo!" : "Download my resume!"}
+          </Button>
+
           <ScrollLink to="projects" smooth={true} duration={400}>
             <Button
               size="lg"
@@ -139,6 +159,20 @@ export function Nav() {
                     {idioma === "pt" ? "EN" : "PT"}
                   </Button>
                 </HStack>
+                <VStack>
+                  <Button
+                    mt="4"
+                    size="lg"
+                    onClick={() => downloadCV()}
+                    bg="blue.500"
+                    color="white"
+                    _hover={{ bg: "blue.600" }}
+                  >
+                    {idioma === "pt"
+                      ? "Baixe meu currículo!"
+                      : "Download my resume!"}
+                  </Button>
+                </VStack>
               </Box>
             )}
           </Box>
