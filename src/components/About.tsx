@@ -44,14 +44,13 @@ export function About() {
     <Stack
       direction={["column", "row"]}
       spacing={[8, 12]}
+      maxW="1400px" // controla a largura total do conteúdo
+      mx="auto"
+      px={[4, 8]}
+      py={[4, 8]}
       height={{ base: "auto", md: "960px", lg: "560px", xl: "680px" }}
       alignItems={["flex-start", "center"]}
       justifyContent="space-between"
-      ml={0}
-      mr={0}
-      mb={["24px", "16px"]}
-      px={[4, 0]}
-      p={[4, 8]}
     >
       <Box width={["100%", "580px", "640px"]} id="About">
         <Text as="b" fontSize={["2xl", "3xl", "5xl"]} color="#E4F2FF">
