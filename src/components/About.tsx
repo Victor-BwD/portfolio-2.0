@@ -44,7 +44,7 @@ export function About() {
     <Stack
       direction={["column", "row"]}
       spacing={[8, 12]}
-      maxW="1400px" // controla a largura total do conteúdo
+      maxW="1400px"
       mx="auto"
       px={[4, 8]}
       py={[4, 8]}
