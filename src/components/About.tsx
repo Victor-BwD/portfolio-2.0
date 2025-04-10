@@ -43,18 +43,18 @@ export function About() {
   return (
     <Stack
       direction={["column", "row"]}
-      spacing={24}
+      spacing={[8, 12]}
       height={{ base: "auto", md: "960px", lg: "560px", xl: "680px" }}
       alignItems={["flex-start", "center"]}
       justifyContent="space-between"
-      ml={{ lg: "13px" }}
-      mr={{ lg: "13px" }}
-      mb={{ base: "42px", md: "24px", lg: "24px", xl: "24px" }}
+      ml={0}
+      mr={0}
+      mb={["24px", "16px"]}
       px={[4, 0]}
       p={[4, 8]}
     >
       <Box width={["100%", "580px", "640px"]} id="About">
-        <Text as="b" fontSize={["3xl", "4xl", "5xl"]} color="#E4F2FF">
+        <Text as="b" fontSize={["2xl", "3xl", "5xl"]} color="#E4F2FF">
           {idioma === "pt" ? "Minha carreira até agora" : "My career so far"}
         </Text>
         <Stack spacing={2} mt={2}>
@@ -79,7 +79,7 @@ export function About() {
               : "Currently, I am working as a full-stack developer at Lighthouse company."}
           </Text>
           <HStack>
-            <Text as="b" color="#E4F2FF" fontSize={["md", "lg"]}>
+            <Text as="b" color="#E4F2FF" fontSize={["sm", "lg"]}>
               {idioma === "pt" ? "Mande-me um e-mail:" : "Send me an email:"}
             </Text>
             <Text as="span" id="email" color="#E4F2FF" wordBreak="break-word">
