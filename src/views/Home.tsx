@@ -3,7 +3,6 @@ import { Apresentation } from "../components/Apresentation";
 import { Nav } from "../components/Nav";
 import { Projects } from "../components/Projects";
 import { About } from "../components/About";
-import { Footer } from "../components/Footer";
 
 export function Home() {
   return (
@@ -12,7 +11,6 @@ export function Home() {
       <Apresentation />
       <About />
       <Projects />
-      <Footer />
     </Box>
   );
 }
