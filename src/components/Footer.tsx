@@ -86,7 +86,7 @@ export function Footer() {
               />
             </Link>
             <Link
-              href="mailto:victor.bogdanow@gmail.com"
+              href="mailto:victor.bogdanowdornelles@gmail.com"
               _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.2s"
             >
