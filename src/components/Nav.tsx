@@ -36,7 +36,7 @@ export function Nav() {
   useEffect(() => {
     const handleResize = () => {
       if (isNotMobile) {
-        onClose(); // Fecha os botões quando a tela é redimensionada para uma resolução maior
+        onClose();
       }
     };
 
