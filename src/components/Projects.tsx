@@ -95,6 +95,7 @@ export function Projects() {
         </Text>
       </Flex>
       <Box p={{ base: "4", md: "12" }}>
+        {" "}
         <Grid
           templateColumns={{
             sm: "1fr",
@@ -102,25 +103,29 @@ export function Projects() {
             lg: "repeat(3, 1fr)",
           }}
           gap={4}
+          alignItems="stretch"
         >
           {projectsInfo.map((project) => (
-            <Box
+            <Flex
               key={project.id}
+              direction="column"
               p={4}
-              pb={{ base: "20px", md: "56px", lg: "56px", xl: "10px" }}
               borderWidth="1px"
               borderRadius="md"
               backgroundColor="white"
+              height="100%"
             >
+              {" "}
               <Image
                 src={project.image}
                 alt={project.name}
                 mb={4}
                 objectFit="cover"
-                height={{ base: "", md: "80%" }}
-                width={{ base: "", md: "100%" }}
+                height={{ base: "200px", md: "250px", lg: "280px" }}
+                width="100%"
+                borderRadius="md"
               />
-              <Text mb="4">
+              <Text mb="4" flex="1" textAlign="left">
                 {idioma === "pt"
                   ? project.description
                   : project.descriptionEnglish}
@@ -151,7 +156,7 @@ export function Projects() {
                   {idioma === "pt" ? "Ver Repositório" : "Repository"}
                 </Button>
               </HStack>
-            </Box>
+            </Flex>
           ))}
         </Grid>
       </Box>
