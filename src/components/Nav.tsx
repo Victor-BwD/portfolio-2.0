@@ -8,12 +8,14 @@ import {
   useDisclosure,
   useMediaQuery,
   VStack,
+  Icon,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, DownloadIcon } from "@chakra-ui/icons";
 import { useContext, useEffect } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { Link as ScrollLink, scroller } from "react-scroll";
 import { useNavigate } from "react-router-dom";
+import { UserIcon, GlobeIcon, BracesIcon } from "lucide-react";
 
 export function Nav() {
   const { idioma, alternarIdioma } = useContext(LanguageContext);
@@ -72,24 +74,59 @@ export function Nav() {
       >
         {idioma === "pt" ? "< Portfólio />" : "< Portfolio />"}
       </Heading>
-
       {isNotMobile ? (
         <HStack gap="4" mr={{ base: "8", md: "12" }} mt="2">
           <Button
             size="lg"
             onClick={() => downloadCV()}
-            bg="blue.500"
+            bg="linear-gradient(135deg, #00D4FF 0%, #0099CC 100%)"
             color="white"
-            _hover={{ bg: "blue.600" }}
+            leftIcon={<DownloadIcon />}
+            borderRadius="full"
+            px="8"
+            py="4"
+            fontWeight="700"
+            fontSize="md"
+            shadow="0 8px 32px rgba(0, 212, 255, 0.3)"
+            transform="translateY(0)"
+            transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            border="2px solid transparent"
+            _hover={{
+              bg: "linear-gradient(135deg, #0099CC 0%, #0066AA 100%)",
+              transform: "translateY(-3px)",
+              shadow: "0 12px 40px rgba(0, 212, 255, 0.4)",
+              border: "2px solid rgba(255, 255, 255, 0.3)",
+            }}
+            _active={{
+              transform: "translateY(-1px)",
+              shadow: "0 6px 24px rgba(0, 212, 255, 0.3)",
+            }}
           >
             {idioma === "pt" ? "Baixe meu currículo!" : "Download my resume!"}
           </Button>
-
           <ScrollLink to="projects" smooth={true} duration={400}>
             <Button
               size="lg"
               onClick={() => handleScrollToSection("projects")}
-              _hover={{ color: "blue.700" }}
+              variant="ghost"
+              color="white"
+              leftIcon={<Icon as={BracesIcon} w={5} h={5} />}
+              borderRadius="xl"
+              px="6"
+              py="3"
+              fontWeight="600"
+              border="2px solid transparent"
+              transition="all 0.3s ease"
+              _hover={{
+                color: "#00D4FF",
+                bg: "rgba(0, 212, 255, 0.1)",
+                border: "2px solid #00D4FF",
+                transform: "translateY(-2px)",
+                shadow: "0 6px 20px rgba(0, 212, 255, 0.2)",
+              }}
+              _active={{
+                transform: "translateY(0)",
+              }}
             >
               {idioma === "pt" ? "Projetos" : "Projects"}
             </Button>
@@ -98,16 +135,51 @@ export function Nav() {
             <Button
               size="lg"
               onClick={() => handleScrollToSection("About")}
-              _hover={{ color: "blue.700" }}
+              variant="ghost"
+              color="white"
+              leftIcon={<Icon as={UserIcon} w={5} h={5} />}
+              borderRadius="xl"
+              px="6"
+              py="3"
+              fontWeight="600"
+              border="2px solid transparent"
+              transition="all 0.3s ease"
+              _hover={{
+                color: "#00D4FF",
+                bg: "rgba(0, 212, 255, 0.1)",
+                border: "2px solid #00D4FF",
+                transform: "translateY(-2px)",
+                shadow: "0 6px 20px rgba(0, 212, 255, 0.2)",
+              }}
+              _active={{
+                transform: "translateY(0)",
+              }}
             >
               {idioma === "pt" ? "Sobre" : "About"}
             </Button>
           </ScrollLink>
           <Button
-            colorScheme="gray"
             onClick={alternarIdioma}
             size="lg"
-            _hover={{ color: "blue.700" }}
+            variant="outline"
+            color="white"
+            leftIcon={<Icon as={GlobeIcon} w={5} h={5} />}
+            borderColor="rgba(255, 255, 255, 0.3)"
+            borderRadius="xl"
+            px="6"
+            py="3"
+            fontWeight="600"
+            transition="all 0.3s ease"
+            _hover={{
+              bg: "rgba(0, 212, 255, 0.1)",
+              borderColor: "#00D4FF",
+              color: "#00D4FF",
+              transform: "translateY(-2px)",
+              shadow: "0 6px 20px rgba(0, 212, 255, 0.2)",
+            }}
+            _active={{
+              transform: "translateY(0)",
+            }}
           >
             {idioma === "pt" ? "EN" : "PT"}
           </Button>
@@ -128,49 +200,136 @@ export function Nav() {
               variant="ghost"
               display={{ base: "flex", md: "none" }}
               position="relative"
+              borderRadius="xl"
+              size="lg"
+              transition="all 0.3s ease"
+              _hover={{
+                bg: "rgba(255, 255, 255, 0.1)",
+                transform: "scale(1.05)",
+              }}
+              _active={{
+                transform: "scale(0.95)",
+              }}
             />
             {isOpen && (
               <Box
-                p="4"
-                color="black"
                 pos="absolute"
                 top="16"
                 right="0"
                 left="0"
                 zIndex={10}
+                bg="rgba(255, 255, 255, 0.98)"
+                backdropFilter="blur(15px)"
+                borderRadius="2xl"
+                mx="4"
+                shadow="0 25px 50px rgba(0, 0, 0, 0.15)"
+                border="1px solid rgba(255, 255, 255, 0.3)"
+                overflow="hidden"
               >
-                <HStack spacing="4" align="center" justifyContent="center">
+                <VStack spacing="0" align="stretch" p="6">
                   <ScrollLink to="projects" smooth={true} duration={400}>
-                    <Button size="lg" onClick={onToggle} color="black">
+                    <Button
+                      size="lg"
+                      onClick={onToggle}
+                      leftIcon={<Icon as={BracesIcon} w={5} h={5} />}
+                      color="gray.700"
+                      variant="ghost"
+                      borderRadius="xl"
+                      px="6"
+                      py="4"
+                      h="14"
+                      fontWeight="600"
+                      w="full"
+                      justifyContent="flex-start"
+                      transition="all 0.3s ease"
+                      _hover={{
+                        bg: "linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.1) 100%)",
+                        color: "#00D4FF",
+                        transform: "translateX(4px)",
+                        shadow: "0 4px 12px rgba(0, 212, 255, 0.2)",
+                      }}
+                    >
                       {idioma === "pt" ? "Projetos" : "Projects"}
                     </Button>
                   </ScrollLink>
+
                   <ScrollLink to="About" smooth={true} duration={400}>
-                    <Button size="lg" onClick={onToggle} color="black">
+                    <Button
+                      size="lg"
+                      onClick={onToggle}
+                      color="gray.700"
+                      variant="ghost"
+                      leftIcon={<Icon as={UserIcon} w={5} h={5} />}
+                      borderRadius="xl"
+                      px="6"
+                      py="4"
+                      h="14"
+                      fontWeight="600"
+                      w="full"
+                      justifyContent="flex-start"
+                      transition="all 0.3s ease"
+                      _hover={{
+                        bg: "linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.1) 100%)",
+                        color: "#00D4FF",
+                        transform: "translateX(4px)",
+                        shadow: "0 4px 12px rgba(0, 212, 255, 0.2)",
+                      }}
+                    >
                       {idioma === "pt" ? "Sobre" : "About"}
                     </Button>
                   </ScrollLink>
+
                   <Button
-                    colorScheme="gray"
                     onClick={alternarIdioma}
                     size="lg"
-                    color="black"
+                    color="gray.700"
+                    variant="ghost"
+                    leftIcon={<Icon as={GlobeIcon} w={5} h={5} />}
+                    borderRadius="xl"
+                    px="6"
+                    py="4"
+                    h="14"
+                    fontWeight="600"
+                    w="full"
+                    justifyContent="flex-start"
+                    transition="all 0.3s ease"
+                    _hover={{
+                      bg: "linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.1) 100%)",
+                      color: "#00D4FF",
+                      transform: "translateX(4px)",
+                      shadow: "0 4px 12px rgba(0, 212, 255, 0.2)",
+                    }}
                   >
-                    {idioma === "pt" ? "EN" : "PT"}
+                    {idioma === "pt" ? "Português" : "English"}
                   </Button>
-                </HStack>
-                <VStack>
+
+                  <Box h="4" />
+
                   <Button
-                    mt="4"
-                    size="lg"
                     onClick={() => downloadCV()}
-                    bg="blue.500"
+                    bg="linear-gradient(135deg, #00D4FF 0%, #0099CC 100%)"
                     color="white"
-                    _hover={{ bg: "blue.600" }}
+                    leftIcon={<DownloadIcon />}
+                    borderRadius="2xl"
+                    px="8"
+                    py="6"
+                    h="16"
+                    fontWeight="700"
+                    fontSize="md"
+                    shadow="0 8px 32px rgba(0, 212, 255, 0.3)"
+                    w="full"
+                    transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                    _hover={{
+                      bg: "linear-gradient(135deg, #0099CC 0%, #0066AA 100%)",
+                      transform: "translateY(-2px)",
+                      shadow: "0 12px 40px rgba(0, 212, 255, 0.4)",
+                    }}
+                    _active={{
+                      transform: "translateY(0)",
+                      shadow: "0 8px 32px rgba(0, 212, 255, 0.3)",
+                    }}
                   >
-                    {idioma === "pt"
-                      ? "Baixe meu currículo!"
-                      : "Download my resume!"}
+                    {idioma === "pt" ? "Baixar Currículo" : "Download Resume"}
                   </Button>
                 </VStack>
               </Box>
