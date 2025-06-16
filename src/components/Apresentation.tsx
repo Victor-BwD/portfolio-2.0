@@ -12,6 +12,7 @@ import {
 import { GithubIcon, LinkedinIcon, ChevronDown } from "lucide-react";
 import { useContext, useState, useEffect } from "react";
 import { LanguageContext } from "../context/LanguageContext";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 const theme = extendTheme({
   breakpoints: {
@@ -38,6 +39,13 @@ const bounce = keyframes`
 export function Apresentation() {
   const { idioma } = useContext(LanguageContext);
   const [isVisible, setIsVisible] = useState(true);
+
+  const fullstackText = useTypewriter("Fullstack", 150, 500);
+  const developerText = useTypewriter(
+    "Developer",
+    150,
+    fullstackText.isComplete ? 300 : 0
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,8 +90,19 @@ export function Apresentation() {
                 fontSize={{ base: "4xl", sm: "5xl", md: "8xl", lg: "9xl" }}
                 color="#E4F2FF"
                 height={{ base: "36px", sm: "42px", md: "90px", lg: "152px" }}
+                position="relative"
               >
-                Fullstack
+                {fullstackText.displayText}
+                {!fullstackText.isComplete && fullstackText.showCursor && (
+                  <Box
+                    as="span"
+                    animation={`${bounce} 1s infinite`}
+                    color="#4A90E2"
+                    ml="2px"
+                  >
+                    |
+                  </Box>
+                )}
               </Heading>
               <HStack spacing="4" alignItems="center" pt="7">
                 <Box backgroundColor="white" rounded="10px">
@@ -127,8 +146,19 @@ export function Apresentation() {
               textAlign={{ base: "left", md: "left" }}
               mb={{ base: "2", md: "4", lg: "8" }}
               px={{ base: "4", md: "0" }}
+              position="relative"
             >
-              Developer
+              {developerText.displayText}
+              {!developerText.isComplete && developerText.showCursor && (
+                <Box
+                  as="span"
+                  animation={`${bounce} 1s infinite`}
+                  color="#4A90E2"
+                  ml="2px"
+                >
+                  |
+                </Box>
+              )}
             </Heading>{" "}
             <Text
               ml={{ base: "0", md: "20%", lg: "30%", xl: "40%" }}
