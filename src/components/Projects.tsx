@@ -68,7 +68,6 @@ export const projectsInfo = [
 
 export function Projects() {
   const { idioma } = useContext(LanguageContext);
-
   return (
     <ChakraProvider theme={theme}>
       <Flex
@@ -77,43 +76,62 @@ export function Projects() {
         flexDirection="column"
         id="projects"
         pt="4"
+        w="100%"
+        maxW="100vw"
+        overflow="hidden"
       >
-        <Text as="b" fontSize="4xl" color="#E4F2FF" mb="2">
+        {" "}
+        <Text
+          as="b"
+          fontSize={{ base: "2xl", md: "4xl" }}
+          color="#E4F2FF"
+          mb="2"
+          textAlign="center"
+          px={{ base: "4", md: "0" }}
+        >
           {idioma === "pt" ? "Meus projetos" : "My Projects"}
         </Text>
         <Text
           as="b"
-          fontSize="2xl"
+          fontSize={{ base: "lg", md: "2xl" }}
           color="#E4F2FF"
           mb="2"
           p={{ base: "12px", md: "0" }}
           textAlign="center"
+          maxW={{ base: "90%", md: "100%" }}
         >
           {idioma === "pt"
             ? "Alguns dos meus projetos que fiz no meu tempo livre"
             : "Some of the projects I did in my free time."}
         </Text>
-      </Flex>
-      <Box p={{ base: "4", md: "12" }}>
-        {" "}
+      </Flex>{" "}
+      <Box
+        p={{ base: "16px", md: "12" }}
+        w="100%"
+        maxW="100vw"
+        overflow="hidden"
+      >
         <Grid
           templateColumns={{
-            sm: "1fr",
+            base: "1fr",
             md: "repeat(2, 1fr)",
             lg: "repeat(3, 1fr)",
           }}
-          gap={4}
+          gap={{ base: 3, md: 4 }}
           alignItems="stretch"
+          w="100%"
         >
           {projectsInfo.map((project) => (
             <Flex
               key={project.id}
               direction="column"
-              p={4}
+              p={{ base: 3, md: 4 }}
               borderWidth="1px"
               borderRadius="md"
               backgroundColor="white"
               height="100%"
+              w="100%"
+              maxW="100%"
             >
               {" "}
               <Image
@@ -124,24 +142,35 @@ export function Projects() {
                 height={{ base: "200px", md: "250px", lg: "280px" }}
                 width="100%"
                 borderRadius="md"
-              />
-              <Text mb="4" flex="1" textAlign="left">
+              />{" "}
+              <Text
+                mb="4"
+                flex="1"
+                textAlign="left"
+                fontSize={{ base: "sm", md: "md" }}
+                lineHeight={{ base: "1.4", md: "1.5" }}
+              >
                 {idioma === "pt"
                   ? project.description
                   : project.descriptionEnglish}
               </Text>
               <HStack
-                spacing={{ base: "15px", md: "20px" }}
+                spacing={{ base: "8px", md: "20px" }}
                 justifyContent="center"
                 mt="auto"
+                w="100%"
+                flexWrap={{ base: "wrap", md: "nowrap" }}
               >
                 <Button
                   as={Link}
                   href={project.source}
                   colorScheme="blue"
-                  fontSize={{ base: "sm", md: "md" }}
-                  minW="140px"
+                  fontSize={{ base: "xs", md: "md" }}
+                  minW={{ base: "120px", md: "140px" }}
+                  size={{ base: "sm", md: "md" }}
                   isExternal
+                  flex={{ base: "1", md: "none" }}
+                  maxW={{ base: "none", md: "140px" }}
                 >
                   {idioma === "pt" ? "Ver Projeto" : "View"}
                 </Button>
@@ -149,9 +178,12 @@ export function Projects() {
                   as={Link}
                   href={project.repository}
                   colorScheme="blue"
-                  fontSize={{ base: "sm", md: "md" }}
-                  minW="140px"
+                  fontSize={{ base: "xs", md: "md" }}
+                  minW={{ base: "120px", md: "140px" }}
+                  size={{ base: "sm", md: "md" }}
                   isExternal
+                  flex={{ base: "1", md: "none" }}
+                  maxW={{ base: "none", md: "140px" }}
                 >
                   {idioma === "pt" ? "Ver Repositório" : "Repository"}
                 </Button>
