@@ -121,6 +121,7 @@ export function Projects() {
           alignItems="stretch"
           w="100%"
         >
+          {" "}
           {projectsInfo.map((project) => (
             <Flex
               key={project.id}
@@ -132,6 +133,13 @@ export function Projects() {
               height="100%"
               w="100%"
               maxW="100%"
+              transition="all 0.3s ease"
+              cursor="pointer"
+              _hover={{
+                transform: "translateY(-4px)",
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
+                borderColor: "#4A90E2",
+              }}
             >
               {" "}
               <Image
@@ -142,6 +150,10 @@ export function Projects() {
                 height={{ base: "200px", md: "250px", lg: "280px" }}
                 width="100%"
                 borderRadius="md"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "scale(1.02)",
+                }}
               />{" "}
               <Text
                 mb="4"
@@ -171,6 +183,11 @@ export function Projects() {
                   isExternal
                   flex={{ base: "1", md: "none" }}
                   maxW={{ base: "none", md: "140px" }}
+                  transition="all 0.2s ease"
+                  _hover={{
+                    transform: "translateY(-1px)",
+                    boxShadow: "0 4px 12px rgba(66, 153, 225, 0.3)",
+                  }}
                 >
                   {idioma === "pt" ? "Ver Projeto" : "View"}
                 </Button>
@@ -184,6 +201,11 @@ export function Projects() {
                   isExternal
                   flex={{ base: "1", md: "none" }}
                   maxW={{ base: "none", md: "140px" }}
+                  transition="all 0.2s ease"
+                  _hover={{
+                    transform: "translateY(-1px)",
+                    boxShadow: "0 4px 12px rgba(66, 153, 225, 0.3)",
+                  }}
                 >
                   {idioma === "pt" ? "Ver Repositório" : "Repository"}
                 </Button>
