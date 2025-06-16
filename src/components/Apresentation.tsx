@@ -7,9 +7,10 @@ import {
   extendTheme,
   ChakraProvider,
   Icon,
+  keyframes,
 } from "@chakra-ui/react";
-import { GithubIcon, LinkedinIcon } from "lucide-react";
-import { useContext } from "react";
+import { GithubIcon, LinkedinIcon, ChevronDown } from "lucide-react";
+import { useContext, useState, useEffect } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 
 const theme = extendTheme({
@@ -22,8 +23,34 @@ const theme = extendTheme({
   },
 });
 
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+`;
+
 export function Apresentation() {
   const { idioma } = useContext(LanguageContext);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      setIsVisible(scrollY < 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <ChakraProvider theme={theme}>
       <Flex
@@ -49,11 +76,12 @@ export function Apresentation() {
               alignItems="center"
               height="106px"
             >
+              {" "}
               <Heading
                 as="h1"
-                fontSize={{ base: "5xl", sm: "6x1", md: "8xl", lg: "9xl" }}
+                fontSize={{ base: "4xl", sm: "5xl", md: "8xl", lg: "9xl" }}
                 color="#E4F2FF"
-                height={{ base: "42px", sm: "62px", md: "90px", lg: "152px" }}
+                height={{ base: "36px", sm: "42px", md: "90px", lg: "152px" }}
               >
                 Fullstack
               </Heading>
@@ -89,29 +117,47 @@ export function Apresentation() {
                   </a>
                 </Box>
               </HStack>
-            </HStack>
+            </HStack>{" "}
             <Heading
               as="h1"
               pr={{ base: "42px", md: "0", lg: "0", xl: "0" }}
               ml={{ base: "0px", md: "15%", lg: "15%", xl: "15%" }}
-              fontSize={{ base: "5xl", sm: "6x1", md: "8xl", lg: "9xl" }}
+              fontSize={{ base: "4xl", sm: "5xl", md: "8xl", lg: "9xl" }}
               color="#E4F2FF"
-              textAlign={{ base: "center", md: "left" }}
+              textAlign={{ base: "left", md: "left" }}
               mb={{ base: "2", md: "4", lg: "8" }}
+              px={{ base: "4", md: "0" }}
             >
               Developer
-            </Heading>
+            </Heading>{" "}
             <Text
               ml={{ base: "0", md: "20%", lg: "30%", xl: "40%" }}
               fontSize={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
               color="#BFDEFF"
-              textAlign={{ base: "center", md: "left" }}
+              textAlign={{ base: "left", md: "left" }}
               mb={{ base: "8", md: "12", lg: "16" }}
+              px={{ base: "4", md: "0" }}
             >
               {idioma === "pt"
                 ? "Com 3 anos de experiência em desenvolvimento de software, trabalho com foco em resultados e prezando pela qualidade da entrega."
                 : "With 3 years of experience in software development, I work with a focus on delivering results while prioritizing the quality of delivery."}
-            </Text>
+            </Text>{" "}
+            <Flex
+              justifyContent="center"
+              display={{ base: "flex", md: "none" }}
+              mt="4"
+              opacity={isVisible ? 0.8 : 0}
+              transform={isVisible ? "translateY(0)" : "translateY(20px)"}
+              transition="all 0.5s ease-in-out"
+              pointerEvents={isVisible ? "auto" : "none"}
+            >
+              <Icon
+                as={ChevronDown}
+                boxSize="32px"
+                color="#E4F2FF"
+                animation={isVisible ? `${bounce} 2s infinite` : "none"}
+              />
+            </Flex>
           </Box>
         </Box>
       </Flex>
