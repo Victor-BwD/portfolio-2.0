@@ -173,6 +173,7 @@ export function Projects() {
                 w="100%"
                 flexWrap={{ base: "wrap", md: "nowrap" }}
               >
+                {" "}
                 <Button
                   as={Link}
                   href={project.source}
@@ -180,7 +181,6 @@ export function Projects() {
                   fontSize={{ base: "xs", md: "md" }}
                   minW={{ base: "120px", md: "140px" }}
                   size={{ base: "sm", md: "md" }}
-                  isExternal
                   flex={{ base: "1", md: "none" }}
                   maxW={{ base: "none", md: "140px" }}
                   transition="all 0.2s ease"
