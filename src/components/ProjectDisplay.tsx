@@ -7,16 +7,25 @@ import {
   Text,
   Badge,
   Icon,
+  IconButton,
+  HStack,
 } from "@chakra-ui/react";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { LanguageContext } from "../context/LanguageContext";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import {
+  ArrowLeft,
+  Github,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 interface ProjectDisplayProps {
   project: {
     id: number;
     name: string;
     image: string;
+    images?: string[];
     description: string;
     descriptionEnglish: string;
     descriptionForProjectView: string;
@@ -29,6 +38,40 @@ interface ProjectDisplayProps {
 
 export function ProjectDisplay({ project }: ProjectDisplayProps) {
   const { idioma } = useContext(LanguageContext);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const projectImages =
+    project.images && project.images.length > 0
+      ? project.images
+      : [project.image];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === projectImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? projectImages.length - 1 : prev - 1
+    );
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  useEffect(() => {
+    if (projectImages.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) =>
+          prev === projectImages.length - 1 ? 0 : prev + 1
+        );
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }
+  }, [currentImageIndex, projectImages.length]);
 
   const getTechnologies = () => {
     const desc = project.descriptionForProjectView.toLowerCase();
@@ -130,20 +173,118 @@ export function ProjectDisplay({ project }: ProjectDisplayProps) {
             {idioma === "pt"
               ? project.descriptionForProjectView
               : project.descriptionForProjectViewEnglish}
-          </Text>
+          </Text>{" "}
+          <Box position="relative" w={{ base: "100%", md: "600px" }}>
+            {/* Imagem principal */}
+            <Image
+              src={projectImages[currentImageIndex]}
+              alt={`Imagem do projeto ${currentImageIndex + 1}`}
+              w="100%"
+              h={{ base: "200px", md: "320px" }}
+              objectFit="cover"
+              borderRadius="lg"
+              shadow="2xl"
+              transition="all 0.3s ease"
+              _hover={{
+                transform: "scale(1.02)",
+                shadow: "0 20px 40px rgba(0,0,0,0.3)",
+              }}
+            />
 
-          <Image
-            src={project.image}
-            alt="Imagem do projeto"
-            w={{ base: "100%", md: "600px" }}
-            borderRadius="lg"
-            shadow="2xl"
-            transition="all 0.3s ease"
-            _hover={{
-              transform: "scale(1.02)",
-              shadow: "0 20px 40px rgba(0,0,0,0.3)",
-            }}
-          />
+            {projectImages.length > 1 && (
+              <>
+                <IconButton
+                  aria-label="Imagem anterior"
+                  icon={<Icon as={ChevronLeft} />}
+                  position="absolute"
+                  left={2}
+                  top="50%"
+                  transform="translateY(-50%)"
+                  bg="rgba(0,0,0,0.6)"
+                  color="white"
+                  size="md"
+                  borderRadius="full"
+                  _hover={{
+                    bg: "rgba(0,0,0,0.8)",
+                    transform: "translateY(-50%) scale(1.1)",
+                  }}
+                  onClick={prevImage}
+                  zIndex={2}
+                />
+
+                <IconButton
+                  aria-label="Próxima imagem"
+                  icon={<Icon as={ChevronRight} />}
+                  position="absolute"
+                  right={2}
+                  top="50%"
+                  transform="translateY(-50%)"
+                  bg="rgba(0,0,0,0.6)"
+                  color="white"
+                  size="md"
+                  borderRadius="full"
+                  _hover={{
+                    bg: "rgba(0,0,0,0.8)",
+                    transform: "translateY(-50%) scale(1.1)",
+                  }}
+                  onClick={nextImage}
+                  zIndex={2}
+                />
+              </>
+            )}
+
+            {projectImages.length > 1 && (
+              <HStack
+                position="absolute"
+                bottom={3}
+                left="50%"
+                transform="translateX(-50%)"
+                spacing={2}
+                zIndex={2}
+              >
+                {projectImages.map((_, index) => (
+                  <Box
+                    key={index}
+                    w={3}
+                    h={3}
+                    borderRadius="full"
+                    bg={
+                      index === currentImageIndex
+                        ? "#4A90E2"
+                        : "rgba(255,255,255,0.5)"
+                    }
+                    cursor="pointer"
+                    transition="all 0.2s ease"
+                    _hover={{
+                      bg:
+                        index === currentImageIndex
+                          ? "#357ABD"
+                          : "rgba(255,255,255,0.8)",
+                      transform: "scale(1.2)",
+                    }}
+                    onClick={() => goToImage(index)}
+                  />
+                ))}
+              </HStack>
+            )}
+
+            {projectImages.length > 1 && (
+              <Box
+                position="absolute"
+                top={3}
+                right={3}
+                bg="rgba(0,0,0,0.6)"
+                color="white"
+                px={3}
+                py={1}
+                borderRadius="full"
+                fontSize="sm"
+                zIndex={2}
+              >
+                {currentImageIndex + 1} / {projectImages.length}
+              </Box>
+            )}
+          </Box>
         </Flex>
         <Flex
           direction={{ base: "column", md: "row" }}

@@ -28,6 +28,11 @@ export const projectsInfo = [
     id: 1,
     name: "Projeto 1",
     image: "https://i.imgur.com/gyxa19Q.png",
+    images: [
+      "https://i.imgur.com/gyxa19Q.png",
+      "https://imgur.com/1qanaID.png",
+      "https://imgur.com/vOIFQFq.png",
+    ],
     description: "Meu jogo ainda em desenvolvimento, Deathbound Castle.",
     descriptionEnglish: "My game still in development, Deathbound Castle.",
     descriptionForProjectView:
