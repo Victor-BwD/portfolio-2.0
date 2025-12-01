@@ -169,8 +169,8 @@ export function Apresentation() {
               px={{ base: "4", md: "0" }}
             >
               {idioma === "pt"
-                ? "Com 3 anos de experiência em desenvolvimento de software, trabalho com foco em resultados e prezando pela qualidade da entrega."
-                : "With 3 years of experience in software development, I work with a focus on delivering results while prioritizing the quality of delivery."}
+                ? "Com 4 anos de experiência em desenvolvimento de software, trabalho com foco em resultados e prezando pela qualidade da entrega."
+                : "With 4 years of experience in software development, I work with a focus on delivering results while prioritizing the quality of delivery."}
             </Text>{" "}
             <Flex
               justifyContent="center"

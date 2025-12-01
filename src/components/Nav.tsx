@@ -56,7 +56,7 @@ export function Nav() {
 
   const downloadCV = () => {
 
-    const cvPath = idioma === "pt" ? "/Currículo Victor B. Dornelles.pdf" : "/Resume Victor B. Dornelles-Eng.pdf";
+    const cvPath = idioma === "pt" ? "/Currículo Victor B. Dornelles.pdf" : "/Resume Victor B. Dornelles- Eng.pdf";
     const link = document.createElement("a");
     link.href = cvPath;
     link.download = cvPath.substring(cvPath.lastIndexOf("/") + 1);
