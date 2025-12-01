@@ -68,6 +68,12 @@ export function Apresentation() {
         ml="8"
         p="2"
         mr="8"
+        sx={{
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
+          backfaceVisibility: 'hidden',
+          transform: 'translateZ(0)',
+        }}
       >
         <Box>
           <Box>
@@ -84,7 +90,6 @@ export function Apresentation() {
               alignItems="center"
               height="106px"
             >
-              {" "}
               <Heading
                 as="h1"
                 fontSize={{ base: "4xl", sm: "5xl", md: "8xl", lg: "9xl" }}
@@ -136,7 +141,7 @@ export function Apresentation() {
                   </a>
                 </Box>
               </HStack>
-            </HStack>{" "}
+            </HStack>
             <Heading
               as="h1"
               pr={{ base: "42px", md: "0", lg: "0", xl: "0" }}
@@ -159,7 +164,7 @@ export function Apresentation() {
                   |
                 </Box>
               )}
-            </Heading>{" "}
+            </Heading>
             <Text
               ml={{ base: "0", md: "20%", lg: "30%", xl: "40%" }}
               fontSize={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
@@ -171,7 +176,7 @@ export function Apresentation() {
               {idioma === "pt"
                 ? "Com 4 anos de experiência em desenvolvimento de software, trabalho com foco em resultados e prezando pela qualidade da entrega."
                 : "With 4 years of experience in software development, I work with a focus on delivering results while prioritizing the quality of delivery."}
-            </Text>{" "}
+            </Text>
             <Flex
               justifyContent="center"
               display={{ base: "flex", md: "none" }}

@@ -22,6 +22,12 @@ export function Footer() {
       borderTop="1px solid rgba(255, 255, 255, 0.1)"
       py={{ base: 8, md: 12 }}
       mt="auto"
+      sx={{
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+        backfaceVisibility: 'hidden',
+        transform: 'translateZ(0)',
+      }}
     >
       <Container maxW="container.xl">
         <Flex
@@ -30,7 +36,6 @@ export function Footer() {
           align="center"
           gap={6}
         >
-          {" "}
           <HStack spacing={6}>
             <Link
               href="https://github.com/Victor-BwD"
@@ -57,14 +62,13 @@ export function Footer() {
                 color="#BFDEFF"
                 _hover={{ color: "#E4F2FF" }}
               />
-            </Link>{" "}
+            </Link>
             <Link
               href="https://www.instagram.com/victor_bwd/"
               isExternal
               _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.2s"
             >
-              {" "}
               <Icon
                 as={FaInstagram as any}
                 boxSize={6}
