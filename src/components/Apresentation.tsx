@@ -7,10 +7,10 @@ import {
   extendTheme,
   ChakraProvider,
   Icon,
-  keyframes,
 } from "@chakra-ui/react";
 import { GithubIcon, LinkedinIcon, ChevronDown } from "lucide-react";
 import { useContext, useState, useEffect } from "react";
+import { keyframes } from "@emotion/react";
 import { LanguageContext } from "../context/LanguageContext";
 import { useTypewriter } from "../hooks/useTypewriter";
 
