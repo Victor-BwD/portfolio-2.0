@@ -55,9 +55,11 @@ export function Nav() {
   }, []);
 
   const downloadCV = () => {
+
+    const cvPath = idioma === "pt" ? "/Currículo Victor B. Dornelles.pdf" : "/Resume Victor B. Dornelles-Eng.pdf";
     const link = document.createElement("a");
-    link.href = "/Currículo Victor B. Dornelles.pdf";
-    link.download = "Currículo Victor B. Dornelles.pdf";
+    link.href = cvPath;
+    link.download = cvPath.substring(cvPath.lastIndexOf("/") + 1);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
