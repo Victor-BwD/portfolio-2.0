@@ -33,12 +33,12 @@ export const projectsInfo = [
       "https://imgur.com/1qanaID.png",
       "https://imgur.com/vOIFQFq.png",
     ],
-    description: "Meu jogo ainda em desenvolvimento, Deathbound Castle.",
-    descriptionEnglish: "My game still in development, Deathbound Castle.",
+    description: "Meu jogo ainda em desenvolvimento, Deathbound Castle. Fortemente inspirado em Castlevania e Dark Souls.",
+    descriptionEnglish: "My game still in development, Deathbound Castle. Heavily inspired by Castlevania and Dark Souls.",
     descriptionForProjectView:
-      "Comecei esse projeto por um curso de Unity que comprei, porém gostei tanto do resultado que decidi seguir com o jogo. O jogo é inspirado em Castlevania e Dark Souls, ainda vou colocar pontos como souls para up, loja e um chefe final. O jogo se chama Deathbound Castle, se passando em um castelo abandonado e cheio de diversos perigos. É feito inteiramente na Unity com CSharp.",
+      "Comecei esse projeto por um curso de Unity que comprei, porém gostei tanto do resultado que decidi seguir com o jogo. O jogo se chama Deathbound Castle, se passando em um castelo abandonado cheio de inimigos e perigos diferentes. É todo feito em Unity com CSharp. O jogo é inspirado em Castlevania e Dark Souls, o jogo conta com sistema de almas para upgrade de itens e personagem, diversos inimigos e um chefe final. A versão final ainda vai ser lançada em Janeiro de 2025.",
     descriptionForProjectViewEnglish:
-      "I started this project from a Unity course I bought, but I liked the result so much that I decided to continue with the game. The game is inspired by Castlevania and Dark Souls. I still plan to add features like soul points for leveling up, a shop, and a final boss. The game is called Deathbound Castle, taking place in an abandoned castle full of different enemies and dangers. It is done entirely in Unity with CSharp.",
+      "I started this project for a Unity course I bought, but I liked the result so much that I decided to continue with the game. The game is called Deathbound Castle, set in an abandoned castle full of different enemies and dangers. It is entirely made in Unity with CSharp. The game is inspired by Castlevania and Dark Souls, the game features a soul system for upgrading items and characters, various enemies, and a final boss. The final version will still be released in January 2025.",
     source: "/project/1",
     projectSite: "https://victor-bwd.itch.io/the-castle",
     repository: "https://github.com/Victor-BwD/Game-2D-Metroidvania",
@@ -46,16 +46,16 @@ export const projectsInfo = [
   {
     id: 2,
     name: "Projeto 2",
-    image: "https://i.imgur.com/igcrBRx.png",
-    description: "Site feito em React utilizando typescript.",
-    descriptionEnglish: "Website built in React using TypeScript.",
+    image: "https://i.imgur.com/U6H7N4r.png",
+    description: "API com lógica de categorização automática feita em Java com Spring Boot, com versionamento de banco de dados e autenticação JWT.",
+    descriptionEnglish: "API with automatic categorization logic made in Java with Spring Boot, with database versioning and JWT authentication.",
     descriptionForProjectView:
-      "Projeto feito para aprendizado de React. O site é responsivo para todos os dispositivos e estilizado com ChakraUI. Tive a ideia de fazer um site de um jogo que gosto muito, Baldurs Gate 3, misturando algumas referências e gosto pessoais. Embora seja um desenvolvedor voltado para back-end, gosto de aprender e fazer projetos front-end para melhorar minhas habilidades e conhecimentos.",
+      "Projeto feito para controlar melhor minhas finanças pessoais. A API foi feita em Java com Spring Boot, utilizando banco de dados relacional PostgreSQL e versionamento de banco com Flyway. A autenticação é feita com JWT para maior segurança. A lógica de categorização automática utiliza palavras-chaves, registradas pelo próprio usuário, para categorizar as transações financeiras automaticamente ao serem cadastradas. Infelizmente, a parte do front-end ainda está em desenvolvimento.",
     descriptionForProjectViewEnglish:
-      "Project made for learning React. The website is responsive for all devices and styled with ChakraUI. I had the idea of creating a website for a game I really like, Baldurs Gate 3, mixing some references and personal tastes. Although Im a backend-oriented developer, I enjoy learning and working on frontend projects to enhance my skills and knowledge.",
+      "Project made to better control my personal finances. The API was made in Java with Spring Boot, using a relational PostgreSQL database and database versioning with Flyway. Authentication is done with JWT for greater security. The automatic categorization logic uses keywords, registered by the user, to automatically categorize financial transactions when they are registered. Unfortunately, the front-end part is still under development.",
     source: "/project/2",
-    projectSite: "https://baldurs-gate-site.vercel.app/",
-    repository: "https://github.com/Victor-BwD/baldurs-gate-site",
+    projectSite: "#",
+    repository: "https://github.com/Victor-BwD/smart-expenses-api",
   },
   {
     id: 3,

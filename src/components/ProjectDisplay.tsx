@@ -300,7 +300,6 @@ export function ProjectDisplay({ project }: ProjectDisplayProps) {
             color="white"
             size="lg"
             px={8}
-            isExternal
             transition="all 0.3s ease"
             _hover={{
               transform: "translateY(-2px)",
