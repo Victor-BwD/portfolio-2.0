@@ -175,7 +175,6 @@ export function ProjectDisplay({ project }: ProjectDisplayProps) {
               : project.descriptionForProjectViewEnglish}
           </Text>{" "}
           <Box position="relative" w={{ base: "100%", md: "600px" }}>
-            {/* Imagem principal */}
             <Image
               src={projectImages[currentImageIndex]}
               alt={`Imagem do projeto ${currentImageIndex + 1}`}

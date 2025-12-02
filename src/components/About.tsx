@@ -60,8 +60,8 @@ export function About() {
                 maxW="500px"
               >
                 {idioma === "pt"
-                  ? "Com 3 anos de experiência em desenvolvimento web. Atualmente fullstack na Lighthouse, sempre em busca de novos desafios e projetos complexos."
-                  : "With 3 years of experience web development. Currently fullstack at Lighthouse, always seeking new challenges and complex projects."}
+                  ? "Com 3 anos de experiência em desenvolvimento web. Atualmente procurando novos desafios e projetos complexos."
+                  : "With 3 years of experience web development. Currently seeking new challenges and complex projects."}
               </Text>
               <HStack spacing={4} mt={4}>
                 {" "}

@@ -27,7 +27,7 @@ export const projectsInfo = [
   {
     id: 1,
     name: "Projeto 1",
-    image: "https://i.imgur.com/gyxa19Q.png",
+    image: "https://i.imgur.com/1j9mDXy.png",
     images: [
       "https://i.imgur.com/gyxa19Q.png",
       "https://imgur.com/1qanaID.png",
@@ -59,7 +59,7 @@ export const projectsInfo = [
   },
   {
     id: 3,
-    name: "Projeto 2",
+    name: "Projeto 3",
     image: "https://i.imgur.com/GrHWDC1.png",
     description: "Projeto do desafio Otimização 1BRC. Onde o objetivo é otimizar a leitura de 1 bilhão de linhas e organiza-las.",
     descriptionEnglish: "Project of the 1BRC Optimization challenge. Where the objective is to optimize the reading of 1 billion lines and organize them.",
@@ -69,6 +69,20 @@ export const projectsInfo = [
     projectSite: "#",
     repository: "https://github.com/Victor-BwD/1BRC_otimization",
   },
+  {
+    id: 4,
+    name: "Market List App",
+    image: "https://i.imgur.com/OXVVFjR.png",
+    description: "Projeto desenvolvido por mim para gerenciar a lista de compras mensal de casa. Feito com Node.js no back-end e React no front-end. No momento não está em deploy por estar em melhorias.",
+    descriptionEnglish: "Project developed by me to manage the monthly household shopping list. Made with Node.js on the back-end and React on the front-end. Currently not deployed as it is undergoing improvements.",
+    descriptionForProjectView:
+      "Aplicação completa desenvolvida para facilitar o gerenciamento das compras mensais da casa. O projeto conta com um back-end robusto feito em Node.js e um front-end intuitivo criado com React. A aplicação permite adicionar, editar e remover itens da lista de compras, além de organizar os produtos por categorias. O sistema também calcula o valor total das compras e permite marcar itens como comprados. Atualmente o projeto está passando por melhorias e otimizações antes de ser colocado em produção.",
+    descriptionForProjectViewEnglish:
+      "Complete application developed to facilitate the management of monthly household shopping. The project features a robust back-end made with Node.js and an intuitive front-end created with React. The application allows adding, editing, and removing items from the shopping list, as well as organizing products by categories. The system also calculates the total purchase value and allows marking items as purchased. Currently, the project is undergoing improvements and optimizations before being put into production.",
+    source: "/project/4",
+    projectSite: "#",
+    repository: "https://github.com/Victor-BwD/market-list-app",
+  }
 ];
 
 export function Projects() {
