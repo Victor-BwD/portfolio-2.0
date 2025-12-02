@@ -60,14 +60,14 @@ export const projectsInfo = [
   {
     id: 3,
     name: "Projeto 2",
-    image: ComingSoonPhoto,
-    description: "Projeto em desenvolvimento.",
-    descriptionEnglish: "Project in development",
-    descriptionForProjectView: "",
-    descriptionForProjectViewEnglish: "",
-    source: "https://example.com/source2",
-    projectSite: "https://example.com/repository2",
-    repository: "https://example.com/repository2",
+    image: "https://i.imgur.com/GrHWDC1.png",
+    description: "Projeto do desafio Otimização 1BRC. Onde o objetivo é otimizar a leitura de 1 bilhão de linhas e organiza-las.",
+    descriptionEnglish: "Project of the 1BRC Optimization challenge. Where the objective is to optimize the reading of 1 billion lines and organize them.",
+    descriptionForProjectView: "Projeto feito para o desafio Otimização 1BRC, onde o objetivo é otimizar a leitura de 1 bilhão de linhas e organiza-las. O projeto foi feito em Java, utilizando técnicas de manipulação de arquivos, estruturas de dados eficientes trabalhando na casa dos bytes e algoritmos otimizados para lidar com grandes volumes de dados. O foco principal foi reduzir o tempo de processamento e o uso de memória, garantindo que o sistema pudesse lidar com a enorme quantidade de informações de forma eficaz. O meu tempo atualmente gira em torno da casa dos 3 minutos, testado em um HD 7200RPM.",
+    descriptionForProjectViewEnglish: "Project made for the 1BRC Optimization challenge, where the objective is to optimize the reading of 1 billion lines and organize them. The project was made in Java, using file manipulation techniques, efficient data structures working with bytes, and optimized algorithms to handle large volumes of data. The main focus was to reduce processing time and memory usage, ensuring that the system could effectively handle the enormous amount of information. My current time is around 3 minutes, tested on a 7200RPM HDD.",
+    source: "/project/3",
+    projectSite: "#",
+    repository: "https://github.com/Victor-BwD/1BRC_otimization",
   },
 ];
 
@@ -194,7 +194,7 @@ export function Projects() {
                     boxShadow: "0 4px 12px rgba(66, 153, 225, 0.3)",
                   }}
                 >
-                  {idioma === "pt" ? "Ver Projeto" : "View"}
+                  {idioma === "pt" ? "Ver detalhes" : "Details"}
                 </Button>
                 <Button
                   as={Link}

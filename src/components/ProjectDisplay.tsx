@@ -310,7 +310,7 @@ export function ProjectDisplay({ project }: ProjectDisplayProps) {
               transform: "translateY(0px)",
             }}
           >
-            {idioma === "pt" ? "Ver Demo" : "View Demo"}
+            {idioma === "pt" ? "Rodar Projeto" : "Run Project"}
           </Button>
           <Button
             as={Link}
