@@ -46,7 +46,7 @@ export const projectsInfo = [
   {
     id: 2,
     name: "Projeto 2",
-    image: "https://i.imgur.com/U6H7N4r.png",
+    image: "https://i.imgur.com/80CK9WI.png",
     description: "API com lógica de categorização automática feita em Java com Spring Boot, com versionamento de banco de dados e autenticação JWT.",
     descriptionEnglish: "API with automatic categorization logic made in Java with Spring Boot, with database versioning and JWT authentication.",
     descriptionForProjectView:
