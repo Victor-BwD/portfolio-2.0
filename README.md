@@ -1,46 +1,125 @@
-# Getting Started with Create React App
+# Victor Dornelles · Portfólio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfólio profissional de **Victor Bogdanow Dornelles**, desenvolvedor back-end com foco em **Java e Go**. Reúne experiências profissionais, projetos e tecnologias, com interface em português e inglês e navegação pensada primeiro para dispositivos móveis.
 
-## Available Scripts
+O site é uma aplicação React com TypeScript e Vite. O conteúdo destaca minha atuação em sistemas distribuídos, concorrência, performance, observabilidade e operação em produção.
 
-In the project directory, you can run:
+## O que você encontra
 
-### `npm start`
+- **Apresentação:** especialidade, redes profissionais e acesso ao contato.
+- **Experiência profissional:** Casas Bahia, Lighthouse, alocação na ZEMA e experiência internacional com a KidsBanner Games, no Canadá.
+- **Projetos:** Smart Expenses API e Desafio 1BRC, com contexto técnico e links para os repositórios.
+- **Sobre:** tecnologias e práticas utilizadas no desenvolvimento back-end.
+- **Contato e currículo:** envio ou cópia do e-mail e download do currículo conforme o idioma selecionado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Experiências e projetos têm cards compactos com detalhes expansíveis. As animações respeitam a preferência de movimento reduzido do dispositivo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tecnologias do site
 
-### `npm test`
+| Tecnologia | Uso |
+| --- | --- |
+| React 18 + TypeScript | Componentes e tipagem |
+| Vite 7 | Desenvolvimento local e build |
+| Chakra UI 2 + Emotion | Estilos e layout responsivo |
+| Framer Motion | Transições dos componentes |
+| React Router | Roteamento e redirecionamento das URLs antigas |
+| Lucide + React Icons | Ícones |
+| Testing Library + jsdom | Verificações automatizadas de interação |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Executar localmente
 
-### `npm run build`
+**Requisitos:** Node.js **24.x**, conforme `package.json`, e npm.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/Victor-BwD/portfolio-2.0.git
+cd portfolio-2.0
+npm ci
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O Vite abre o navegador automaticamente. A porta configurada é **3000**: [http://localhost:3000](http://localhost:3000). Se estiver ocupada, consulte o endereço informado no terminal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A configuração atual funciona sem arquivo `.env` ou serviço de backend. Algumas imagens, como o avatar e as capturas dos projetos, são carregadas de serviços externos.
 
-### `npm run eject`
+## Comandos
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm start` | Alternativa para iniciar o mesmo servidor |
+| `npm run check:ui` | Executa as verificações de interação |
+| `npm run build` | Verifica os tipos com TypeScript e gera o site em `dist/` |
+| `npm run preview` | Serve o build localmente para conferência |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para conferir a versão de produção:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm run build
+npm run preview
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Abra o endereço exibido pelo comando de preview.
 
-## Learn More
+## Validação
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run check:ui
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A checagem de UI, em [scripts/check-ui.cjs](scripts/check-ui.cjs), usa um DOM simulado e larguras configuradas de **320, 375, 768 e 1440 px**. Verifica expansão e fechamento dos detalhes, fechamento por Escape e retorno de foco, troca de idioma, menu mobile, links e redirecionamento das antigas páginas de projeto.
+
+A revisão visual de espaçamento, imagens e animações deve ser feita no navegador, em tamanhos de celular e desktop.
+
+## Estrutura
+
+```text
+public/
+  companies/                 # Imagens das empresas
+  *.pdf                      # Currículos em português e inglês
+scripts/
+  check-ui.cjs               # Checagem de interação
+src/
+  components/
+    Apresentation.tsx        # Apresentação e redes profissionais
+    Experience.tsx           # Experiências e responsabilidades
+    Projects.tsx             # Projetos e detalhes expansíveis
+    About.tsx                # Sobre, tecnologias e contato
+    Nav.tsx                  # Menu, idioma e download do currículo
+    Footer.tsx               # Rodapé
+  context/
+    LanguageContext.tsx      # Estado do idioma e atributo lang
+  data/
+    technologies.ts          # Metadados das tecnologias
+  views/
+    Home.tsx                 # Composição das seções
+  App.tsx                    # Rotas
+  index.tsx                  # Inicialização e provider do Chakra
+index.html                   # HTML inicial e metadados
+vite.config.ts               # Configuração do Vite
+```
+
+## Atualizar o conteúdo
+
+| O que alterar | Onde editar |
+| --- | --- |
+| Título, apresentação e redes sociais | [Apresentation.tsx](src/components/Apresentation.tsx) |
+| Empresas, períodos e responsabilidades | [Experience.tsx](src/components/Experience.tsx) |
+| Projetos, imagens, descrições e repositórios | Array `projects` em [Projects.tsx](src/components/Projects.tsx) |
+| Biografia, ordem das tecnologias e e-mail | [About.tsx](src/components/About.tsx) |
+| Cores e metadados das tecnologias | [technologies.ts](src/data/technologies.ts) |
+| Menu e arquivos de currículo por idioma | [Nav.tsx](src/components/Nav.tsx) |
+| Ordem das seções | [Home.tsx](src/views/Home.tsx) |
+| Título da aba e descrição do site | [index.html](index.html) |
+
+Ao editar textos, atualize as versões **PT e EN**. Para substituir os currículos, mantenha os nomes dos PDFs em `public/` ou ajuste os caminhos em `Nav.tsx`. Os arquivos dessa pasta são servidos a partir da raiz do site.
+
+## Publicação
+
+Execute `npm ci` e `npm run build`, e publique a pasta **`dist/`** em uma hospedagem de arquivos estáticos.
+
+Configure a hospedagem para encaminhar rotas da aplicação para `index.html`. Isso permite acessar diretamente URLs antigas como `/project/2`, que são redirecionadas para `/#projects`.
+
+## Contato
+
+[GitHub](https://github.com/Victor-BwD) · [LinkedIn](https://www.linkedin.com/in/victorbwd/) · [E-mail](mailto:victor.bogdanowdornelles@gmail.com)
