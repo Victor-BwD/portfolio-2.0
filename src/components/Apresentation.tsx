@@ -32,20 +32,26 @@ export function Apresentation() {
         </Box>
         <HStack spacing={3} w={{ base: "full", lg: "auto" }} maxW={{ base: "360px", lg: "none" }}
           alignSelf={{ base: "start", lg: "end" }}>
-          <Button as={Link} href="https://github.com/Victor-BwD" isExternal leftIcon={<Github size={22} />}
-            flex={1} minW={0} minH="52px" px={4} fontSize="sm" bg="#F1F6FF" color="#0A1628"
-            border="1px solid #F1F6FF" _hover={{ bg: "#D5E7FF", textDecoration: "none" }}>
-            GitHub
-          </Button>
-          <Button as={Link} href="https://www.linkedin.com/in/victorbwd/" isExternal leftIcon={<Linkedin size={22} />}
-            flex={1} minW={0} minH="52px" px={4} fontSize="sm" bg="#0A66C2" color="white"
-            border="1px solid #4097EE" _hover={{ bg: "#0855A3", textDecoration: "none" }}>
-            LinkedIn
-          </Button>
+          {[
+            { name: "GitHub", href: "https://github.com/Victor-BwD", icon: <Github size={20} /> },
+            { name: "LinkedIn", href: "https://www.linkedin.com/in/victorbwd/", icon: <Linkedin size={20} /> },
+          ].map(social => (
+            <Button key={social.name} as={Link} href={social.href} isExternal
+              leftIcon={<Box as="span" display="inline-flex" color="#78B7FF">{social.icon}</Box>}
+              flex={1} minW={0} minH="48px" px={4} fontSize="sm" fontWeight="semibold"
+              borderRadius="md" bg="#122640" color="#F1F6FF" border="1px solid #496B94"
+              transition="background-color 0.2s, border-color 0.2s, box-shadow 0.2s"
+              _hover={{ bg: "#203C5E", borderColor: "#78B7FF", textDecoration: "none" }}
+              _active={{ bg: "#1B304C" }}
+              _focusVisible={{ outline: "2px solid #78B7FF", outlineOffset: "3px", boxShadow: "none" }}
+              sx={{ "@media (prefers-reduced-motion: reduce)": { transition: "none" } }}>
+              {social.name}
+            </Button>
+          ))}
         </HStack>
       </Flex>
       <Text mt={12} pt={5} borderTop="1px solid #23344D" color="#91A9CA" fontSize="sm">
-        Java / Spring Boot / PostgreSQL / Node.js
+        Java / Go / Spring Boot / PostgreSQL
       </Text>
     </Container>
   );

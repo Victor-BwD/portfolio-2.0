@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { technologies } from "../data/technologies";
 
-const backendNames = ["Java", "Spring Boot", "Node.js", "NestJS", "PostgreSQL", "MongoDB", "Docker", "C#"];
+const backendNames = ["Java", "Go", "Spring Boot", "Kafka", "Redis", "Dynatrace", "Grafana", "PostgreSQL", "Docker", "Node.js", "NestJS", "MongoDB", "C#"];
 const email = "victor.bogdanowdornelles@gmail.com";
 
 export function About() {
@@ -30,17 +30,17 @@ export function About() {
           <Box maxW="650px">
             <Text fontSize="xs" letterSpacing="0.18em" color="#78B7FF" mb={3}>{pt ? "SOBRE MIM" : "ABOUT ME"}</Text>
             <Heading as="h2" color="#F1F6FF" fontSize={{ base: "3xl", md: "5xl" }} letterSpacing="-0.04em">
-              {pt ? "O que acontece por trás da interface." : "What happens behind the interface."}
+              {pt ? "Quem sou eu" : "Who I am."}
             </Heading>
             <Text color="#B6C7DF" mt={5} fontSize="lg" lineHeight="1.8">
               {pt
-                ? "Sou Victor, desenvolvedor back-end. Meu foco está na lógica que sustenta uma aplicação: APIs, regras de negócio, persistência de dados e performance."
-                : "I'm Victor, a back-end developer. My focus is on the logic that powers an application: APIs, business rules, data persistence and performance."}
+                ? "Sou Victor, desenvolvedor back-end com foco em Java e Go. Nas Casas Bahia, desenvolvo aplicações e workers para gestão de estoques, trabalhando com concorrência, performance e escalabilidade em sistemas distribuídos."
+                : "I'm Victor, a back-end developer focused on Java and Go. At Casas Bahia, I develop applications and workers for inventory management, working with concurrency, performance and scalability in distributed systems."}
             </Text>
             <Text color="#91A9CA" mt={4} lineHeight="1.8">
               {pt
-                ? "Nos meus projetos, exploro desde autenticação e categorização de transações até o processamento de grandes volumes de dados. Também gosto de desenvolver jogos, onde exercito lógica e criatividade."
-                : "In my projects, I explore everything from authentication and transaction categorization to processing large datasets. I also enjoy developing games, combining logic and creativity."}
+                ? "Aplico Clean Architecture e Clean Code e atuo em integrações com Kafka e Redis, deploys e troubleshooting de incidentes em produção. Uso Dynatrace e Grafana para observabilidade e análise de métricas, colaborando com desenvolvedores e SREs na melhoria contínua da plataforma."
+                : "I apply Clean Architecture and Clean Code and work on Kafka and Redis integrations, deployments and production incident troubleshooting. I use Dynatrace and Grafana for observability and metrics analysis, collaborating with developers and SREs on continuous platform improvement."}
             </Text>
           </Box>
           <Avatar name="Victor Bogdanow Dornelles" size="2xl" src="https://github.com/Victor-BwD.png" border="3px solid #354963" />
@@ -50,9 +50,11 @@ export function About() {
           <Flex gap={2} flexWrap="wrap">
             {backendNames.map(name => {
               const tech = technologies.find(item => item.name === name);
-              return <HStack key={name} px={4} py={3} bg="#101F34" border="1px solid #2A3B53" borderRadius="lg" spacing={2}>
+              const primary = name === "Java" || name === "Go";
+              return <HStack key={name} px={4} py={3} bg={primary ? "#122640" : "#101F34"}
+                border="1px solid" borderColor={primary ? "#78B7FF" : "#2A3B53"} borderRadius="lg" spacing={2}>
                 <Box w={2} h={2} borderRadius="full" bg={tech?.color ?? "#78B7FF"} />
-                <Text color="#B6C7DF" fontSize="sm">{name}</Text>
+                <Text color={primary ? "#F1F6FF" : "#B6C7DF"} fontWeight={primary ? "semibold" : "normal"} fontSize="sm">{name}</Text>
               </HStack>;
             })}
           </Flex>

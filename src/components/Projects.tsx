@@ -3,7 +3,7 @@ import {
   Badge, Box, Button, Collapse, Container, Flex, Grid, Heading, Image, Link, Text,
   useBreakpointValue, usePrefersReducedMotion,
 } from "@chakra-ui/react";
-import { ArrowUpRight, ChevronDown, Github } from "lucide-react";
+import { ChevronDown, Github } from "lucide-react";
 import { LanguageContext } from "../context/LanguageContext";
 
 const projects = [
@@ -15,7 +15,6 @@ const projects = [
     implementation: ["API em Java e Spring Boot, persistência em PostgreSQL, migrações com Flyway e autenticação com JWT.", "Java and Spring Boot API with PostgreSQL persistence, Flyway migrations and JWT authentication."],
     challenges: ["Criar uma categorização automática baseada em palavras-chave definidas pelo próprio usuário, integrada ao cadastro das transações.", "Build automatic categorization using user-defined keywords, integrated into the transaction creation flow."],
     repository: "https://github.com/Victor-BwD/smart-expenses-api",
-    demo: "",
   },
   {
     id: 3, name: "Desafio 1BRC", nameEnglish: "1BRC Challenge", category: "PERFORMANCE", image: "https://i.imgur.com/GrHWDC1.png",
@@ -25,27 +24,6 @@ const projects = [
     implementation: ["Manipulação de arquivos na casa dos bytes, estruturas de dados eficientes e algoritmos voltados a grandes volumes de dados.", "Byte-level file processing, efficient data structures and algorithms designed for large datasets."],
     challenges: ["Equilibrar processamento e leitura em disco. O teste registrado levou aproximadamente 3 minutos em um HD de 7200 RPM; o resultado depende do hardware e das condições de execução.", "Balance processing and disk I/O. The recorded test took approximately 3 minutes on a 7200 RPM HDD; results depend on hardware and execution conditions."],
     repository: "https://github.com/Victor-BwD/1BRC_otimization",
-    demo: "",
-  },
-  {
-    id: 4, name: "Market List App", category: "WEB APP", image: "https://i.imgur.com/OXVVFjR.png",
-    technologies: ["Node.js", "React"],
-    summary: ["Aplicação para organizar as compras de casa, categorias e orçamento.", "An application to organize household shopping, categories and budget."],
-    objective: ["Simplificar o gerenciamento da lista de compras mensal de casa.", "Simplify the management of the monthly household shopping list."],
-    implementation: ["Backend em Node.js integrado a uma interface em React. Permite adicionar, editar e remover itens, organizar categorias e marcar produtos como comprados.", "Node.js backend integrated with a React interface. Supports adding, editing and removing items, organizing categories and marking products as purchased."],
-    challenges: ["Manter o total das compras consistente com os itens da lista e suas alterações. O projeto está em melhorias e não possui demonstração publicada.", "Keep shopping totals consistent with list items and changes. The project is being improved and has no published demo."],
-    repository: "https://github.com/Victor-BwD/market-list-app",
-    demo: "",
-  },
-  {
-    id: 1, name: "Deathbound Castle", category: "GAME DEV", image: "https://i.imgur.com/1j9mDXy.png",
-    technologies: ["Unity", "C#"],
-    summary: ["Jogo 2D inspirado em Castlevania e Dark Souls, desenvolvido em Unity.", "A Unity 2D game inspired by Castlevania and Dark Souls."],
-    objective: ["Criar um jogo de exploração e combate em um castelo repleto de inimigos e perigos.", "Create an exploration and combat game set in a castle full of enemies and hazards."],
-    implementation: ["Desenvolvido em Unity com C#, com diferentes inimigos, chefe final e um sistema de almas para evolução de itens e personagem.", "Built in Unity with C#, featuring different enemies, a final boss and a soul system for upgrading items and the character."],
-    challenges: ["Expandir o projeto iniciado em um curso, conectando combate, progressão e exploração em uma experiência própria.", "Expand a course project by connecting combat, progression and exploration into an original experience."],
-    repository: "https://github.com/Victor-BwD/Game-2D-Metroidvania",
-    demo: "https://victor-bwd.itch.io/the-castle",
   },
 ];
 
@@ -144,10 +122,6 @@ export function Projects() {
                     <Flex direction={{ base: "column", sm: "row" }} flexWrap="wrap" gap={3} mt={7} pt={5} borderTop="1px solid #2A3B53">
                       <Button as={Link} href={detail.repository} isExternal leftIcon={<Github size={18} />} bg="#78B7FF"
                         color="#071327" _hover={{ bg: "#A3CFFF" }} minH="48px">{pt ? "Ver repositório" : "View repository"}</Button>
-                      {detail.demo && <Button as={Link} href={detail.demo} isExternal rightIcon={<ArrowUpRight size={18} />}
-                        variant="outline" borderColor="#354963" color="#F1F6FF" _hover={{ bg: "whiteAlpha.100" }} minH="48px">
-                        {pt ? "Jogar demo" : "Play demo"}
-                      </Button>}
                       <Button onClick={closeDetails} variant="ghost" color="#B6C7DF" _hover={{ bg: "whiteAlpha.100" }}
                         minH="48px" ml={{ base: 0, sm: "auto" }}>{pt ? "Recolher detalhes" : "Hide details"}</Button>
                     </Flex>

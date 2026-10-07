@@ -8,6 +8,7 @@ export function Nav() {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const pt = idioma === "pt";
   const sections = [
+    { href: "#experience", label: pt ? "Experiência" : "Experience" },
     { href: "#projects", label: pt ? "Projetos" : "Projects" },
     { href: "#About", label: pt ? "Sobre" : "About" },
     { href: "#contact", label: pt ? "Contato" : "Contact" },
@@ -21,10 +22,17 @@ export function Nav() {
             victor<Box as="span" color="#78B7FF">.dev</Box>
           </Link>
           <Flex align="center" gap={{ base: 2, md: 5, lg: 8 }}>
-          <HStack spacing={6} display={{ base: "none", md: "flex" }}>
-            {sections.map(section => <Link key={section.href} href={section.href} color="#B6C7DF" py={3}>{section.label}</Link>)}
-            <Button as="a" href={resume} download size="sm" minH="44px" variant="outline" borderColor="#354963" color="#F1F6FF"
-              leftIcon={<Download size={16} />} _hover={{ bg: "whiteAlpha.100" }}>{pt ? "Currículo" : "Resume"}</Button>
+          <HStack spacing={{ md: 8, lg: 12 }} display={{ base: "none", md: "flex" }}>
+            <HStack spacing={4}>
+            {sections.map(section => <Link key={section.href} href={section.href} color="#B6C7DF" fontSize="sm" py={3}>{section.label}</Link>)}
+            </HStack>
+            <Button as="a" href={resume} download size="sm" minH="48px" px={4} bg="#78B7FF" color="#071327"
+              fontWeight="bold" border="1px solid #A3CFFF" boxShadow="0 4px 16px rgba(120, 183, 255, 0.2)"
+              aria-label={pt ? "Baixar currículo" : "Download resume"} leftIcon={<Download size={18} />}
+              _hover={{ bg: "#A3CFFF", boxShadow: "0 4px 20px rgba(120, 183, 255, 0.35)" }}
+              _active={{ bg: "#5CA6FA" }} _focusVisible={{ outline: "2px solid #F1F6FF", outlineOffset: "3px" }}>
+              {pt ? "Currículo" : "Resume"}
+            </Button>
           </HStack>
           <HStack spacing={2}>
             <Button onClick={alternarIdioma} aria-label={pt ? "Switch to English" : "Mudar para português"} variant="ghost"
@@ -39,8 +47,12 @@ export function Nav() {
         {isOpen && <VStack id="mobile-navigation" as="nav" aria-label={pt ? "Navegação mobile" : "Mobile navigation"}
           display={{ base: "flex", md: "none" }} align="stretch" pb={5} spacing={1}>
           {sections.map(section => <Link key={section.href} href={section.href} onClick={onClose} color="#B6C7DF" py={3}>{section.label}</Link>)}
+          <Box pt={4}>
           <Button as="a" href={resume} download onClick={onClose} leftIcon={<Download size={18} />} bg="#78B7FF" color="#071327"
-            minH="48px" _hover={{ bg: "#A3CFFF" }}>{pt ? "Baixar currículo" : "Download resume"}</Button>
+            w="full" minH="48px" fontWeight="bold" border="1px solid #A3CFFF" boxShadow="0 4px 16px rgba(120, 183, 255, 0.2)"
+            _hover={{ bg: "#A3CFFF", boxShadow: "0 4px 20px rgba(120, 183, 255, 0.35)" }} _active={{ bg: "#5CA6FA" }}
+            _focusVisible={{ outline: "2px solid #F1F6FF", outlineOffset: "3px" }}>{pt ? "Baixar currículo" : "Download resume"}</Button>
+          </Box>
         </VStack>}
       </Container>
     </Box>
