@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useEffect, useState, ReactNode } from "react";
 
 interface LanguageContextType {
   idioma: string;
@@ -16,6 +16,10 @@ interface LanguageProviderProps {
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
   const [idioma, setIdioma] = useState("pt");
+
+  useEffect(() => {
+    document.documentElement.lang = idioma === "pt" ? "pt-BR" : "en";
+  }, [idioma]);
 
   const alternarIdioma = () => {
     setIdioma(idioma === "pt" ? "en" : "pt");

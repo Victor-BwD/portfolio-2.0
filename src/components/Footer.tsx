@@ -114,7 +114,7 @@ export function Footer() {
             </HStack>
 
             <Text fontSize="sm" color="#BFDEFF">
-              © 2025 Victor Bogdanow Dornelles
+              © {new Date().getFullYear()} Victor Bogdanow Dornelles
             </Text>
           </Flex>
         </Flex>

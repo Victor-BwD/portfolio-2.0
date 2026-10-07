@@ -8,15 +8,18 @@ import { Footer } from "../components/Footer";
 export function Home() {
   return (
     <Box
-      backgroundColor="#0B214D"
+      id="top"
+      backgroundColor="#0A1628"
       minHeight="100vh"
       display="flex"
       flexDirection="column"
     >
       <Nav />
-      <Apresentation />
-      <About />
-      <Projects />
+      <Box as="main">
+        <Apresentation />
+        <Projects />
+        <About />
+      </Box>
       <Footer />
     </Box>
   );

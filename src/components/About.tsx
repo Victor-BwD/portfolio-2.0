@@ -1,224 +1,79 @@
 import {
-  Box,
-  Button,
-  VStack,
-  Text,
-  Flex,
-  Image,
-  Container,
-  Heading,
-  SimpleGrid,
-  Avatar,
-  HStack,
+  Avatar, Box, Button, Container, Flex, Heading, HStack, Link, Text, useToast,
 } from "@chakra-ui/react";
+import { Check, Copy, Mail } from "lucide-react";
 import { useContext, useState } from "react";
 import { LanguageContext } from "../context/LanguageContext";
-import { CopyCheck, Mail, Coffee, Code, Heart } from "lucide-react";
 import { technologies } from "../data/technologies";
+
+const backendNames = ["Java", "Spring Boot", "Node.js", "NestJS", "PostgreSQL", "MongoDB", "Docker", "C#"];
+const email = "victor.bogdanowdornelles@gmail.com";
 
 export function About() {
   const { idioma } = useContext(LanguageContext);
+  const pt = idioma === "pt";
   const [emailCopied, setEmailCopied] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("victor.bogdanowdornelles@gmail.com");
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 3000);
+  const toast = useToast();
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setEmailCopied(true);
+      toast({ description: pt ? "E-mail copiado!" : "Email copied!", status: "success", duration: 3000 });
+    } catch {
+      toast({ description: pt ? "Não foi possível copiar. Use o link de e-mail abaixo." : "Could not copy. Use the email link below.", status: "error" });
+    }
   };
-
   return (
-    <Box id="About" py={{ base: 16, md: 20 }}>
-      <Container maxW="1200px">
-        <VStack spacing={{ base: 12, md: 16 }} align="stretch">
-          {" "}
-          <Flex
-            direction={{ base: "column", md: "row" }}
-            align="center"
-            justify="space-between"
-            p={{ base: 8, md: 12 }}
-          >
-            <VStack
-              align={{ base: "center", md: "start" }}
-              spacing={4}
-              flex={1}
-            >
-              {" "}
-              <Heading
-                fontSize={{ base: "4xl", md: "5xl" }}
-                color="#E4F2FF"
-                fontWeight="bold"
-                textAlign={{ base: "center", md: "left" }}
-              >
-                {idioma === "pt"
-                  ? "Criando soluções digitais que fazem a diferença"
-                  : "Building digital solutions that make a difference"}
-              </Heading>{" "}
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                color="#BFDEFF"
-                textAlign={{ base: "center", md: "left" }}
-                maxW="500px"
-              >
-                {idioma === "pt"
-                  ? "Com 3 anos de experiência em desenvolvimento web. Atualmente procurando novos desafios e projetos complexos."
-                  : "With 3 years of experience web development. Currently seeking new challenges and complex projects."}
-              </Text>
-              <HStack spacing={4} mt={4}>
-                {" "}
-                <Box
-                  bg="rgba(74, 144, 226, 0.1)"
-                  px={4}
-                  py={2}
-                  borderRadius="full"
-                  border="1px solid rgba(74, 144, 226, 0.3)"
-                >
-                  <HStack spacing={2}>
-                    <Code size={20} color="#4A90E2" />{" "}
-                    <Text color="#E4F2FF" fontSize="sm" fontWeight="medium">
-                      {idioma === "pt" ? "Fullstack" : "Fullstack"}
-                    </Text>
-                  </HStack>
-                </Box>
-                <Box
-                  bg="rgba(74, 144, 226, 0.1)"
-                  px={4}
-                  py={2}
-                  borderRadius="full"
-                  border="1px solid rgba(74, 144, 226, 0.3)"
-                >
-                  <HStack spacing={2}>
-                    <Heart size={20} color="#4A90E2" />
-                    <Text color="#E4F2FF" fontSize="sm" fontWeight="medium">
-                      {idioma === "pt" ? "Backend" : "Backend"}
-                    </Text>
-                  </HStack>
-                </Box>
-              </HStack>
-            </VStack>
-
-            <Avatar
-              size="2xl"
-              src="https://github.com/Victor-BwD.png"
-              border="4px solid rgba(255, 255, 255, 0.3)"
-              ml={{ base: 0, md: 8 }}
-              mt={{ base: 8, md: 0 }}
-            />
-          </Flex>
-          <Box>
-            {" "}
-            <Heading
-              fontSize={{ base: "3xl", md: "4xl" }}
-              color="#E4F2FF"
-              textAlign="center"
-              mb={8}
-              fontWeight="bold"
-            >
-              {idioma === "pt"
-                ? "Tecnologias que domino"
-                : "Technologies I’m skilled in"}
+    <Box as="section" id="About" py={{ base: 14, md: 20 }} borderTop="1px solid #23344D" scrollMarginTop="24px">
+      <Container maxW="1200px" px={{ base: 5, md: 8 }}>
+        <Flex direction={{ base: "column-reverse", md: "row" }} align={{ base: "start", md: "center" }} justify="space-between" gap={8}>
+          <Box maxW="650px">
+            <Text fontSize="xs" letterSpacing="0.18em" color="#78B7FF" mb={3}>{pt ? "SOBRE MIM" : "ABOUT ME"}</Text>
+            <Heading as="h2" color="#F1F6FF" fontSize={{ base: "3xl", md: "5xl" }} letterSpacing="-0.04em">
+              {pt ? "O que acontece por trás da interface." : "What happens behind the interface."}
             </Heading>
-            <SimpleGrid
-              columns={{ base: 2, sm: 3, md: 4, lg: 5 }}
-              spacing={6}
-              maxW="900px"
-              mx="auto"
-            >
-              {technologies.map((tech) => (
-                <Flex
-                  key={tech.id}
-                  direction="column"
-                  align="center"
-                  bg="rgba(255, 255, 255, 0.1)"
-                  borderRadius="xl"
-                  p={6}
-                  backdropFilter="blur(10px)"
-                  border="1px solid rgba(255, 255, 255, 0.2)"
-                  transition="all 0.3s ease"
-                  _hover={{
-                    transform: "translateY(-8px)",
-                    bg: "rgba(255, 255, 255, 0.15)",
-                    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-                  }}
-                  cursor="pointer"
-                >
-                  <Image
-                    src={tech.icon}
-                    alt={tech.name}
-                    boxSize="48px"
-                    mb={3}
-                    filter={
-                      tech.name === "Next.js" || tech.name === "Unity"
-                        ? "invert(1)"
-                        : "none"
-                    }
-                  />{" "}
-                  <Text
-                    color="#E4F2FF"
-                    fontSize="sm"
-                    fontWeight="medium"
-                    textAlign="center"
-                  >
-                    {tech.name}
-                  </Text>
-                </Flex>
-              ))}
-            </SimpleGrid>
+            <Text color="#B6C7DF" mt={5} fontSize="lg" lineHeight="1.8">
+              {pt
+                ? "Sou Victor, desenvolvedor back-end. Meu foco está na lógica que sustenta uma aplicação: APIs, regras de negócio, persistência de dados e performance."
+                : "I'm Victor, a back-end developer. My focus is on the logic that powers an application: APIs, business rules, data persistence and performance."}
+            </Text>
+            <Text color="#91A9CA" mt={4} lineHeight="1.8">
+              {pt
+                ? "Nos meus projetos, exploro desde autenticação e categorização de transações até o processamento de grandes volumes de dados. Também gosto de desenvolver jogos, onde exercito lógica e criatividade."
+                : "In my projects, I explore everything from authentication and transaction categorization to processing large datasets. I also enjoy developing games, combining logic and creativity."}
+            </Text>
           </Box>
-          <Flex
-            bg="rgba(255, 255, 255, 0.1)"
-            borderRadius="2xl"
-            p={{ base: 8, md: 10 }}
-            direction={{ base: "column", md: "row" }}
-            align="center"
-            justify="space-between"
-            backdropFilter="blur(20px)"
-            border="1px solid rgba(255, 255, 255, 0.2)"
-          >
-            {" "}
-            <VStack align={{ base: "center", md: "start" }} spacing={3}>
-              <HStack spacing={3}>
-                <Coffee size={24} color="#4A90E2" />
-                <Heading fontSize="2xl" color="#E4F2FF">
-                  {idioma === "pt" ? "Vamos bater um papo?" : "Let's talk?"}
-                </Heading>
-              </HStack>
-              <Text
-                color="#BFDEFF"
-                fontSize="lg"
-                textAlign={{ base: "center", md: "left" }}
-              >
-                {idioma === "pt"
-                  ? "Sempre aberto para novos projetos e oportunidades!"
-                  : "Always open to new projects and opportunities!"}
-              </Text>
-              <Text color="#BFDEFF" fontSize="md" fontFamily="mono">
-                victor.bogdanowdornelles@gmail.com
-              </Text>
-            </VStack>{" "}
-            <Button
-              leftIcon={
-                emailCopied ? <CopyCheck size={20} /> : <Mail size={20} />
-              }
-              size="lg"
-              colorScheme="blue"
-              _hover={{
-                transform: "translateY(-2px)",
-              }}
-              onClick={handleCopyEmail}
-              mt={{ base: 6, md: 0 }}
-              fontWeight="bold"
-              px={8}
-            >
-              {emailCopied
-                ? idioma === "pt"
-                  ? "E-mail Copiado!"
-                  : "Email Copied!"
-                : idioma === "pt"
-                ? "Copiar E-mail"
-                : "Copy Email"}
+          <Avatar name="Victor Bogdanow Dornelles" size="2xl" src="https://github.com/Victor-BwD.png" border="3px solid #354963" />
+        </Flex>
+        <Box mt={10}>
+          <Heading as="h3" color="#F1F6FF" fontSize="lg" mb={4}>{pt ? "Tecnologias com que trabalho" : "Technologies I work with"}</Heading>
+          <Flex gap={2} flexWrap="wrap">
+            {backendNames.map(name => {
+              const tech = technologies.find(item => item.name === name);
+              return <HStack key={name} px={4} py={3} bg="#101F34" border="1px solid #2A3B53" borderRadius="lg" spacing={2}>
+                <Box w={2} h={2} borderRadius="full" bg={tech?.color ?? "#78B7FF"} />
+                <Text color="#B6C7DF" fontSize="sm">{name}</Text>
+              </HStack>;
+            })}
+          </Flex>
+        </Box>
+        <Box as="section" id="contact" mt={{ base: 14, md: 20 }} p={{ base: 5, md: 10 }} bg="#122640" border="1px solid #354963"
+          borderRadius="2xl" scrollMarginTop="24px">
+          <Text fontSize="xs" letterSpacing="0.18em" color="#78B7FF" mb={3}>{pt ? "CONTATO" : "CONTACT"}</Text>
+          <Heading as="h2" color="#F1F6FF" fontSize={{ base: "2xl", md: "4xl" }} letterSpacing="-0.03em">
+            {pt ? "Vamos conversar sobre seu próximo projeto?" : "Let's talk about your next project."}
+          </Heading>
+          <Text mt={4} color="#B6C7DF" lineHeight="1.7">{pt ? "Para oportunidades, projetos ou uma boa troca de ideias." : "For opportunities, projects or a good exchange of ideas."}</Text>
+          <Link href={`mailto:${email}`} display="block" color="#BCD7FA" fontSize="sm" overflowWrap="anywhere" mt={5}>{email}</Link>
+          <Flex direction={{ base: "column", sm: "row" }} gap={3} mt={6}>
+            <Button as="a" href={`mailto:${email}`} leftIcon={<Mail size={18} />} bg="#78B7FF" color="#071327" minH="48px"
+              _hover={{ bg: "#A3CFFF" }}>{pt ? "Enviar e-mail" : "Send email"}</Button>
+            <Button onClick={handleCopyEmail} leftIcon={emailCopied ? <Check size={18} /> : <Copy size={18} />} variant="outline"
+              borderColor="#49607C" color="#F1F6FF" minH="48px" _hover={{ bg: "whiteAlpha.100" }}>
+              {emailCopied ? (pt ? "Copiado!" : "Copied!") : (pt ? "Copiar e-mail" : "Copy email")}
             </Button>
           </Flex>
-        </VStack>
+        </Box>
       </Container>
     </Box>
   );

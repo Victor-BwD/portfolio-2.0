@@ -1,201 +1,52 @@
-import {
-  Box,
-  Text,
-  Heading,
-  Flex,
-  HStack,
-  extendTheme,
-  ChakraProvider,
-  Icon,
-} from "@chakra-ui/react";
-import { GithubIcon, LinkedinIcon, ChevronDown } from "lucide-react";
-import { useContext, useState, useEffect } from "react";
-import { keyframes } from "@emotion/react";
+import { Box, Button, Container, Flex, Heading, HStack, Link, Text } from "@chakra-ui/react";
+import { ArrowDown, ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
-import { useTypewriter } from "../hooks/useTypewriter";
-
-const theme = extendTheme({
-  breakpoints: {
-    sm: "30em", // 480px
-    md: "48em", // 768px
-    lg: "62em", // 992px
-    xl: "80em", // 1280px
-    "2xl": "96em", // 1536px (novo breakpoint)
-  },
-});
-
-const bounce = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-`;
 
 export function Apresentation() {
   const { idioma } = useContext(LanguageContext);
-  const [isVisible, setIsVisible] = useState(true);
-
-  const fullstackText = useTypewriter("Fullstack", 150, 500);
-  const developerText = useTypewriter(
-    "Developer",
-    150,
-    fullstackText.isComplete ? 300 : 0
-  );
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-
-      setIsVisible(scrollY < 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  const pt = idioma === "pt";
   return (
-    <ChakraProvider theme={theme}>
-      <Flex
-        height="95vh"
-        alignItems="center"
-        justifyContent="center"
-        ml="8"
-        p="2"
-        mr="8"
-        sx={{
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale',
-          backfaceVisibility: 'hidden',
-          transform: 'translateZ(0)',
-        }}
-      >
-        <Box>
-          <Box>
-            <Text
-              fontSize={{ base: "xl", md: "3xl" }}
-              ml={{ base: "1", md: "2" }}
-              color="#E4F2FF"
-              as="b"
-            >
-              Victor Bogdanow Dornelles
-            </Text>
-            <HStack
-              spacing={{ base: "4", md: "6" }}
-              alignItems="center"
-              height="106px"
-            >
-              <Heading
-                as="h1"
-                fontSize={{ base: "4xl", sm: "5xl", md: "8xl", lg: "9xl" }}
-                color="#E4F2FF"
-                height={{ base: "36px", sm: "42px", md: "90px", lg: "152px" }}
-                position="relative"
-              >
-                {fullstackText.displayText}
-                {!fullstackText.isComplete && fullstackText.showCursor && (
-                  <Box
-                    as="span"
-                    animation={`${bounce} 1s infinite`}
-                    color="#4A90E2"
-                    ml="2px"
-                  >
-                    |
-                  </Box>
-                )}
-              </Heading>
-              <HStack spacing="4" alignItems="center" pt="7">
-                <Box backgroundColor="white" rounded="10px">
-                  <a
-                    href="https://github.com/Victor-BwD"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Icon
-                      as={GithubIcon}
-                      boxSize={{ base: "42px", md: "68px" }}
-                      color="black"
-                      mt="2"
-                      _hover={{ color: "blue.500" }}
-                    />
-                  </a>
-                </Box>
-                <Box backgroundColor="white" rounded="10px">
-                  <a
-                    href="https://www.linkedin.com/in/victorbwd/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Icon
-                      as={LinkedinIcon}
-                      boxSize={{ base: "42px", md: "68px" }}
-                      color="black"
-                      mt="2"
-                      _hover={{ color: "blue.500" }}
-                    />
-                  </a>
-                </Box>
-              </HStack>
-            </HStack>
-            <Heading
-              as="h1"
-              pr={{ base: "42px", md: "0", lg: "0", xl: "0" }}
-              ml={{ base: "0px", md: "15%", lg: "15%", xl: "15%" }}
-              fontSize={{ base: "4xl", sm: "5xl", md: "8xl", lg: "9xl" }}
-              color="#E4F2FF"
-              textAlign={{ base: "left", md: "left" }}
-              mb={{ base: "2", md: "4", lg: "8" }}
-              px={{ base: "4", md: "0" }}
-              position="relative"
-            >
-              {developerText.displayText}
-              {!developerText.isComplete && developerText.showCursor && (
-                <Box
-                  as="span"
-                  animation={`${bounce} 1s infinite`}
-                  color="#4A90E2"
-                  ml="2px"
-                >
-                  |
-                </Box>
-              )}
-            </Heading>
-            <Text
-              ml={{ base: "0", md: "20%", lg: "30%", xl: "40%" }}
-              fontSize={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
-              color="#BFDEFF"
-              textAlign={{ base: "left", md: "left" }}
-              mb={{ base: "8", md: "12", lg: "16" }}
-              px={{ base: "4", md: "0" }}
-            >
-              {idioma === "pt"
-                ? "Com 4 anos de experiência em desenvolvimento de software, trabalho com foco em resultados e prezando pela qualidade da entrega."
-                : "With 4 years of experience in software development, I work with a focus on delivering results while prioritizing the quality of delivery."}
-            </Text>
-            <Flex
-              justifyContent="center"
-              display={{ base: "flex", md: "none" }}
-              mt="4"
-              opacity={isVisible ? 0.8 : 0}
-              transform={isVisible ? "translateY(0)" : "translateY(20px)"}
-              transition="all 0.5s ease-in-out"
-              pointerEvents={isVisible ? "auto" : "none"}
-            >
-              <Icon
-                as={ChevronDown}
-                boxSize="32px"
-                color="#E4F2FF"
-                animation={isVisible ? `${bounce} 2s infinite` : "none"}
-              />
-            </Flex>
-          </Box>
+    <Container as="section" maxW="1200px" px={{ base: 5, md: 8 }} py={{ base: 16, md: 24 }}>
+      <Text color="#91A9CA" fontSize="xs" letterSpacing="0.2em" textTransform="uppercase" mb={6}>
+        Victor Bogdanow Dornelles
+      </Text>
+      <Heading as="h1" fontSize={{ base: "clamp(3rem, 13vw, 6rem)", md: "clamp(6rem, 10vw, 9rem)" }}
+        lineHeight="0.95" letterSpacing="-0.065em" fontWeight="800" color="#F1F6FF">
+        <Box as="span" display="block">Back-end</Box>
+        <Box as="span" display="block" color="#78B7FF">Developer<Box as="span" color="#F1F6FF">.</Box></Box>
+      </Heading>
+      <Flex direction={{ base: "column", lg: "row" }} justify="space-between" gap={8} mt={{ base: 8, md: 12 }}>
+        <Box maxW="560px">
+          <Text color="#B6C7DF" fontSize={{ base: "lg", md: "xl" }} lineHeight="1.8">
+            {pt
+              ? "Desenvolvo APIs e sistemas com foco em regras de negócio, dados e performance. Transformo problemas em soluções que funcionam nos bastidores."
+              : "I develop APIs and systems focused on business logic, data and performance. Turning problems into solutions that work behind the scenes."}
+          </Text>
+          <Flex direction={{ base: "column", sm: "row" }} gap={3} mt={7}>
+            <Button as="a" href="#projects" rightIcon={<ArrowDown size={18} />} size="lg" bg="#78B7FF" color="#071327"
+              _hover={{ bg: "#A3CFFF" }}>{pt ? "Ver projetos" : "View projects"}</Button>
+            <Button as="a" href="#contact" rightIcon={<ArrowUpRight size={18} />} size="lg" variant="outline"
+              borderColor="#354963" color="#F1F6FF" _hover={{ bg: "whiteAlpha.100" }}>{pt ? "Entrar em contato" : "Get in touch"}</Button>
+          </Flex>
         </Box>
+        <HStack spacing={3} w={{ base: "full", lg: "auto" }} maxW={{ base: "360px", lg: "none" }}
+          alignSelf={{ base: "start", lg: "end" }}>
+          <Button as={Link} href="https://github.com/Victor-BwD" isExternal leftIcon={<Github size={22} />}
+            flex={1} minW={0} minH="52px" px={4} fontSize="sm" bg="#F1F6FF" color="#0A1628"
+            border="1px solid #F1F6FF" _hover={{ bg: "#D5E7FF", textDecoration: "none" }}>
+            GitHub
+          </Button>
+          <Button as={Link} href="https://www.linkedin.com/in/victorbwd/" isExternal leftIcon={<Linkedin size={22} />}
+            flex={1} minW={0} minH="52px" px={4} fontSize="sm" bg="#0A66C2" color="white"
+            border="1px solid #4097EE" _hover={{ bg: "#0855A3", textDecoration: "none" }}>
+            LinkedIn
+          </Button>
+        </HStack>
       </Flex>
-    </ChakraProvider>
+      <Text mt={12} pt={5} borderTop="1px solid #23344D" color="#91A9CA" fontSize="sm">
+        Java / Spring Boot / PostgreSQL / Node.js
+      </Text>
+    </Container>
   );
 }

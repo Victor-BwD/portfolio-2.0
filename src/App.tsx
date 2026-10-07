@@ -2,8 +2,7 @@ import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 
 import { Home } from './views/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ProjectView } from './views/ProjectView';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
 
@@ -13,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project/:projectId" element={<ProjectView />} />
+          <Route path="/project/:projectId" element={<Navigate to="/#projects" replace />} />
         </Routes>
       </Router>
     </LanguageProvider>
